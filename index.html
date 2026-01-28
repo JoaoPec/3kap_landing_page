@@ -2,669 +2,877 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3KAP - Auditoria, Tecnologia e RH</title>
-  <meta name="description"
-    content="Soluções integradas em Auditoria, Tecnologia e Recursos Humanos para impulsionar seu negócio.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3KAP - Auditoria, Tecnologia e RH</title>
+    <meta name="description"
+        content="Soluções integradas em Auditoria, Tecnologia e Recursos Humanos para impulsionar seu negócio.">
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
 
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              DEFAULT: '#1a365d',
-              light: '#2c5282',
-              dark: '#0f2942'
-            },
-            secondary: {
-              DEFAULT: '#0891b2',
-              light: '#22d3ee',
-              dark: '#0e7490'
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2D5A27',
+                            light: '#3A6B35',
+                            dark: '#1E3D1A'
+                        },
+                        secondary: {
+                            DEFAULT: '#4A8C40',
+                            light: '#5FA055',
+                            dark: '#3D7335'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Sora', 'system-ui', 'sans-serif'],
+                    }
+                }
             }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Sora', 'system-ui', 'sans-serif'],
-          }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <style>
-    /* Custom Animations */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
+    <style>
+        /* Custom Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    @keyframes pulse-ring {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.8;
-      }
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
 
-      100% {
-        transform: scale(1.4);
-        opacity: 0;
-      }
-    }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
 
-    .animate-fade-up {
-      animation: fadeUp 0.6s ease-out forwards;
-    }
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
 
-    .animation-delay-100 {
-      animation-delay: 100ms;
-    }
+        .animation-delay-100 {
+            animation-delay: 100ms;
+        }
 
-    .animation-delay-200 {
-      animation-delay: 200ms;
-    }
+        .animation-delay-200 {
+            animation-delay: 200ms;
+        }
 
-    .animation-delay-300 {
-      animation-delay: 300ms;
-    }
+        .animation-delay-300 {
+            animation-delay: 300ms;
+        }
 
-    .whatsapp-pulse::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: #25D366;
-      animation: pulse-ring 1.5s ease-out infinite;
-    }
+        .whatsapp-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: #25D366;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
 
-    .gradient-text {
-      background: linear-gradient(135deg, #0891b2, #22d3ee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .gradient-text {
+            background: linear-gradient(135deg, #3A6B35, #5FA055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .stat-gradient {
-      background: linear-gradient(135deg, #0891b2, #22d3ee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .stat-gradient {
+            background: linear-gradient(135deg, #3A6B35, #5FA055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: #0891b2;
-      transition: width 0.3s ease;
-    }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: #3A6B35;
+            transition: width 0.3s ease;
+        }
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .service-card,
-    .blog-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .service-card,
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .service-card:hover,
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px -12px rgba(26, 54, 93, 0.15);
-    }
-  </style>
+        .service-card:hover,
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(45, 90, 39, 0.15);
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
-  <!-- ========== HEADER ========== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2">
-          <span class="text-3xl font-bold font-display text-primary">
-            3<span class="gradient-text">kap</span>
-          </span>
-          <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Group</span>
-        </a>
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-8">
-          <a href="#" class="relative text-sm font-medium text-primary nav-link">Home</a>
-          <a href="#sobre"
-            class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Sobre</a>
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <span class="text-3xl font-bold font-display text-primary">
+                        3<span class="gradient-text">kap</span>
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Group</span>
+                </a>
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="relative text-sm font-medium text-primary nav-link">Home</a>
+                    <a href="#sobre"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Sobre</a>
 
-          <!-- Dropdown -->
-          <div class="relative group">
-            <button
-              class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">
-              Serviços
-              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+                    <!-- Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+                            Serviços
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[180px]">
+                                <a href="#servicos"
+                                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Auditoria</a>
+                                <a href="#servicos"
+                                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Tecnologia</a>
+                                <a href="#servicos"
+                                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Recursos
+                                    Humanos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="cursos.html"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">3kap
+                        Academy</a>
+                    <a href="#blog"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Blog</a>
+
+                    <a href="#contato"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg font-semibold text-white text-sm bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25">
+                        Fale Conosco
+                    </a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="#" class="block py-3 px-4 text-primary font-medium bg-slate-50 rounded-lg">Home</a>
+                <a href="#sobre" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Sobre</a>
+                <a href="#servicos"
+                    class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Serviços</a>
+                <a href="cursos.html" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">3kap
+                    Academy</a>
+                <a href="#blog" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Blog</a>
+                <div class="pt-2">
+                    <a href="#contato"
+                        class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light">
+                        Fale Conosco
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
+                    <span
+                        class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
+                        🚀 Transformando negócios desde 2015
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up animation-delay-100 font-display opacity-0"
+                    style="animation-fill-mode: forwards;">
+                    Inovação e
+                    <span class="relative inline-block">
+                        <span class="relative z-10">Excelência</span>
+                        <span class="absolute bottom-2 left-0 right-0 h-3 bg-secondary/40 -z-0"></span>
+                    </span>
+                    em Serviços Empresariais
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 mb-8 animate-fade-up animation-delay-200 max-w-xl opacity-0"
+                    style="animation-fill-mode: forwards;">
+                    Soluções integradas em <strong class="text-white">Auditoria</strong>,
+                    <strong class="text-white">Tecnologia</strong> e
+                    <strong class="text-white">Recursos Humanos</strong> para impulsionar seu negócio ao próximo nível.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-300 opacity-0"
+                    style="animation-fill-mode: forwards;">
+                    <a href="#servicos"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25 group">
+                        Conheça Nossos Serviços
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                    <a href="#sobre"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all">
+                        Sobre a 3KAP
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE / STATS ========== -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+                    Sobre Nós
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
+                    Conheça a <span class="gradient-text">3KAP</span>
+                </h2>
+                <p class="text-lg text-slate-600">
+                    A 3kap Auditoria é uma empresa inovadora com soluções integradas de melhores práticas de gestão.
+                    Desenvolvemos auditoria contábil, consultoria empresarial e tributária, com utilização de
+                    ferramentas tecnológicas.
+                    Nossa metodologia de trabalho é baseada nas melhores práticas internacionais de auditoria contábil.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">10+</p>
+                    <p class="text-slate-600 font-medium">Anos de Experiência</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">500+</p>
+                    <p class="text-slate-600 font-medium">Clientes Atendidos</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">98%</p>
+                    <p class="text-slate-600 font-medium">Satisfação</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">50+</p>
+                    <p class="text-slate-600 font-medium">Especialistas</p>
+                </div>
+            </div>
+            <!-- Pilares -->
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Qualidade Única</h3>
+                    <p class="text-slate-600">Contamos com uma equipe profissional para te entregar os melhores
+                        serviços.</p>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Suporte Otimizado</h3>
+                    <p class="text-slate-600">Qualquer problema que você venha a ter, estaremos aqui para solucionar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVIÇOS ========== -->
+    <section id="servicos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+                    Nossos Serviços
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
+                    Soluções <span class="gradient-text">Completas</span> para seu Negócio
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Auditoria -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary to-primary-light mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Auditoria Contábil</h3>
+                    <p class="text-slate-600 mb-4">Realizamos trabalhos de auditoria em conformidade com as melhores
+                        práticas internacionais.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Auditoria de indústria e comércio</li>
+                        <li>• Auditoria de prestadores de serviços</li>
+                        <li>• Auditoria condominial</li>
+                        <li>• Auditoria do terceiro setor</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Auditoria%20Cont%C3%A1bil"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Valuation -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-secondary to-secondary-light mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Valuation / Due Diligence</h3>
+                    <p class="text-slate-600 mb-4">Avaliação de empresas (Valuation) possibilita a mensuração do valor
+                        de uma marca e/ou produto.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Mensurar quanto vale uma empresa</li>
+                        <li>• Identificar riscos jurídicos</li>
+                        <li>• Confiabilidade na transação societária</li>
+                        <li>• Transparência na relação investidores</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Valuation"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- LGPD -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary-light to-secondary mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">LGPD</h3>
+                    <p class="text-slate-600 mb-4">Metodologia em LGPD desenvolvida com as melhores ferramentas
+                        tecnológicas.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Diagnóstico de conformidade</li>
+                        <li>• Plano de adequação</li>
+                        <li>• Projeto de implementação</li>
+                        <li>• DPO - Data Protection Officer</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20LGPD"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Consultoria Tributária -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary to-primary-light mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Consultoria Tributária</h3>
+                    <p class="text-slate-600 mb-4">Soluções baseadas nas principais tendências e mudanças nas
+                        legislações.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Tributos diretos e indiretos</li>
+                        <li>• Trabalhista e previdenciário</li>
+                        <li>• Preço de transferência</li>
+                        <li>• Recuperação tributária</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Consultoria%20Tribut%C3%A1ria"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Inventário -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-secondary to-secondary-light mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Inventário Físico</h3>
+                    <p class="text-slate-600 mb-4">Realizamos procedimentos de Inventário Físico em conformidade com as
+                        melhores práticas.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Contagem física de ativos</li>
+                        <li>• Conciliação de estoques</li>
+                        <li>• Relatórios detalhados</li>
+                        <li>• Recomendações de melhoria</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Invent%C3%A1rio%20F%C3%ADsico"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Tecnologia -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                    <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary-light to-secondary mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Tecnologia</h3>
+                    <p class="text-slate-600 mb-4">Desenvolvimento de sistemas e aplicativos personalizados para sua
+                        empresa.</p>
+                    <ul class="text-slate-500 text-sm space-y-2 mb-6">
+                        <li>• Sistemas personalizados</li>
+                        <li>• Automação de processos</li>
+                        <li>• Ferramentas tecnológicas</li>
+                        <li>• Soluções inovadoras</li>
+                    </ul>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Tecnologia"
+                        class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
+                        Saiba mais
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== POR QUE ESCOLHER A 3KAP ========== -->
+    <section class="relative py-24 overflow-hidden">
+        <!-- Background base -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
+
+        <!-- Blobs -->
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
+
+        <!-- Pattern SVG -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Texto -->
+                <div>
+                    <span
+                        class="inline-block px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold mb-4 border border-white/20">
+                        Diferenciais
+                    </span>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 font-display">
+                        Por que escolher a <span class="text-secondary-light">3KAP</span>?
+                    </h2>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
+                                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4" />
+                                </svg>
+                            </div>
+                            <p class="text-lg text-white/90 pt-2">Equipe altamente qualificada e experiente</p>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
+                                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 3v18m9-9H3" />
+                                </svg>
+                            </div>
+                            <p class="text-lg text-white/90 pt-2">Soluções personalizadas para cada cliente</p>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
+                                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <p class="text-lg text-white/90 pt-2">Tecnologia de ponta e metodologias inovadoras</p>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
+                                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682" />
+                                </svg>
+                            </div>
+                            <p class="text-lg text-white/90 pt-2">Atendimento próximo e humano</p>
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista"
+                        target="_blank"
+                        class="flex w-full items-center justify-center text-center sm:w-auto mt-10 px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all shadow-lg shadow-secondary/25">
+                        Fale com um especialista
+                    </a>
+                </div>
+
+                <!-- Imagem -->
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop"
+                            class="w-full h-full object-cover" alt="Equipe 3KAP">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3KAP ACADEMY CTA ========== -->
+    <section id="academy" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
-              class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[180px]">
-                <a href="#servicos"
-                  class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Auditoria</a>
-                <a href="#servicos"
-                  class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Tecnologia</a>
-                <a href="#servicos"
-                  class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Recursos
-                  Humanos</a>
-              </div>
+                class="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10 text-center max-w-2xl mx-auto">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold mb-4 border border-white/20">
+                        🎓 3kap Academy
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
+                        Tenha uma carreira de sucesso praticando Lifelong Learning
+                    </h2>
+                    <p class="text-lg text-white/80 mb-8">
+                        Torne a sua vida mais prática! Otimize suas atividades com nossos cursos e materiais.
+                        Assine a 3KAP Academy e tenha acesso a conteúdos exclusivos.
+                    </p>
+                    <a href="cursos.html"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-primary bg-white hover:bg-slate-100 transition-all hover:-translate-y-0.5 shadow-lg group">
+                        Ver todos os cursos
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-          </div>
-
-          <a href="#academy"
-            class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">3kap
-            Academy</a>
-          <a href="#blog"
-            class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Blog</a>
-
-          <a href="#contato"
-            class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg font-semibold text-white text-sm bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25">
-            Fale Conosco
-          </a>
-        </nav>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
-      <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
-        <a href="#" class="block py-3 px-4 text-primary font-medium bg-slate-50 rounded-lg">Home</a>
-        <a href="#sobre" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Sobre</a>
-        <a href="#servicos" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Serviços</a>
-        <a href="#academy" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">3kap Academy</a>
-        <a href="#blog" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Blog</a>
-        <div class="pt-2">
-          <a href="#contato"
-            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light">
-            Fale Conosco
-          </a>
         </div>
-      </nav>
-    </div>
-  </header>
+    </section>
 
-  <!-- ========== HERO ========== -->
-  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
-    <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
-    <div class="absolute inset-0 opacity-10"
-      style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <div class="animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
-          <span
-            class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
-            🚀 Transformando negócios desde 2015
-          </span>
-        </div>
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up animation-delay-100 font-display opacity-0"
-          style="animation-fill-mode: forwards;">
-          Inovação e
-          <span class="relative inline-block">
-            <span class="relative z-10">Excelência</span>
-            <span class="absolute bottom-2 left-0 right-0 h-3 bg-secondary/40 -z-0"></span>
-          </span>
-          em Serviços Empresariais
-        </h1>
-        <p class="text-lg md:text-xl text-white/80 mb-8 animate-fade-up animation-delay-200 max-w-xl opacity-0"
-          style="animation-fill-mode: forwards;">
-          Soluções integradas em <strong class="text-white">Auditoria</strong>,
-          <strong class="text-white">Tecnologia</strong> e
-          <strong class="text-white">Recursos Humanos</strong> para impulsionar seu negócio ao próximo nível.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-300 opacity-0"
-          style="animation-fill-mode: forwards;">
-          <a href="#servicos"
-            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25 group">
-            Conheça Nossos Serviços
-            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <a href="#sobre"
-            class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all">
-            Sobre a 3KAP
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SOBRE / STATS ========== -->
-  <section id="sobre" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
-          Sobre Nós
-        </span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
-          Conheça a <span class="gradient-text">3KAP</span>
-        </h2>
-        <p class="text-lg text-slate-600">
-          Somos uma empresa inovadora que oferece soluções integradas em Auditoria,
-          Tecnologia e Recursos Humanos. Nossa metodologia é baseada nas melhores
-          práticas internacionais, com foco em qualidade e resultados.
-        </p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-        <div class="text-center">
-          <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">10+</p>
-          <p class="text-slate-600 font-medium">Anos de Experiência</p>
-        </div>
-        <div class="text-center">
-          <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">500+</p>
-          <p class="text-slate-600 font-medium">Clientes Atendidos</p>
-        </div>
-        <div class="text-center">
-          <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">98%</p>
-          <p class="text-slate-600 font-medium">Satisfação</p>
-        </div>
-        <div class="text-center">
-          <p class="text-5xl md:text-6xl font-bold stat-gradient mb-2 font-display">50+</p>
-          <p class="text-slate-600 font-medium">Especialistas</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SERVIÇOS ========== -->
-  <section id="servicos" class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
-          Nossos Serviços
-        </span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
-          Soluções <span class="gradient-text">Completas</span> para seu Negócio
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Auditoria -->
-        <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
-          <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Auditoria Contábil</h3>
-          <p class="text-slate-600 mb-6">Identificação de erros, fraudes e recomendação de melhorias para aumentar a
-            transparência.</p>
-          <a href="#"
-            class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
-            Saiba mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-        <!-- Tecnologia -->
-        <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
-          <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Tecnologia</h3>
-          <p class="text-slate-600 mb-6">Desenvolvimento de sistemas e aplicativos personalizados para sua empresa.</p>
-          <a href="#"
-            class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
-            Saiba mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-        <!-- RH -->
-        <div class="service-card bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
-          <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Recursos Humanos</h3>
-          <p class="text-slate-600 mb-6">Gestão completa de pessoas, desde recrutamento até desenvolvimento
-            profissional.</p>
-          <a href="#"
-            class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">
-            Saiba mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========== POR QUE ESCOLHER A 3KAP ========== -->
-  <section class="relative py-24 overflow-hidden">
-    <!-- Background base -->
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
-
-    <!-- Blobs -->
-    <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
-
-    <!-- Pattern SVG (igual ao Hero) -->
-    <div class="absolute inset-0 opacity-10"
-      style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
-    </div>
-
-    <!-- Conteúdo -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Texto -->
-        <div>
-          <span
-            class="inline-block px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold mb-4 border border-white/20">
-            Diferenciais
-          </span>
-
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 font-display">
-            Por que escolher a <span class="text-secondary-light">3KAP</span>?
-          </h2>
-
-          <ul class="space-y-6">
-            <li class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
-                </svg>
-              </div>
-              <p class="text-lg text-white/90 pt-2">Equipe altamente qualificada e experiente</p>
-            </li>
-
-            <li class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18m9-9H3" />
-                </svg>
-              </div>
-              <p class="text-lg text-white/90 pt-2">Soluções personalizadas para cada cliente</p>
-            </li>
-
-            <li class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <p class="text-lg text-white/90 pt-2">Tecnologia de ponta e metodologias inovadoras</p>
-            </li>
-
-            <li class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                <svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682" />
-                </svg>
-              </div>
-              <p class="text-lg text-white/90 pt-2">Atendimento próximo e humano</p>
-            </li>
-          </ul>
-
-          <a href="https://wa.me/557184812306?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista"
-            target="_blank"
-            class="flex w-full items-center justify-center text-center sm:w-auto mt-10 px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all shadow-lg shadow-secondary/25">Fale
-            com um especialista</a></a>
-        </div>
-
-        <!-- Imagem -->
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop"
-              class="w-full h-full object-cover" alt="Equipe 3KAP">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== BLOG / INSIGHTS SECTION (SUBSTITUINDO NEWSLETTER) ========== -->
-  <section id="blog" class="py-24 bg-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div class="max-w-2xl">
-          <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
-            Insights & Conhecimento
-          </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
-            Conheça nosso <span class="gradient-text">Blog</span>
-          </h2>
-          <p class="text-lg text-slate-600">
-            Fique por dentro das últimas tendências em Auditoria, Inovação Tecnológica e Gestão de Pessoas com nossos
-            especialistas.
-          </p>
-        </div>
-        <a href="#"
-          class="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors group whitespace-nowrap">
-          Ver todos os artigos
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Post 1 -->
-        <article class="blog-card bg-slate-50 rounded-2xl overflow-hidden flex flex-col border border-slate-100">
-          <div class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1454165833767-027ffea10c4b?w=600&auto=format&fit=crop"
-              alt="Auditoria Digital" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase">Auditoria</span>
-              <span class="text-xs text-slate-400">5 min de leitura</span>
+    <!-- ========== BLOG / INSIGHTS SECTION ========== -->
+    <section id="blog" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+                        Insights & Conhecimento
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
+                        Conheça nosso <span class="gradient-text">Blog</span>
+                    </h2>
+                    <p class="text-lg text-slate-600">
+                        Fique por dentro das últimas tendências em Auditoria, Inovação Tecnológica e Gestão de Pessoas
+                        com nossos especialistas.
+                    </p>
+                </div>
+                <a href="#"
+                    class="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors group whitespace-nowrap">
+                    Ver todos os artigos
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">O futuro da Auditoria: Digital e Inteligente
-            </h3>
-            <p class="text-slate-600 text-sm mb-6 flex-grow">Descubra como a inteligência artificial está revolucionando
-              a transparência e a precisão nos processos de auditoria moderna.</p>
-            <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
-          </div>
-        </article>
 
-        <!-- Post 2 -->
-        <article class="blog-card bg-slate-50 rounded-2xl overflow-hidden flex flex-col border border-slate-100">
-          <div class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop"
-              alt="Cultura de Inovação" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-xs font-bold uppercase">Tecnologia</span>
-              <span class="text-xs text-slate-400">8 min de leitura</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165833767-027ffea10c4b?w=600&auto=format&fit=crop"
+                            alt="Auditoria Digital" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">Auditoria</span>
+                            <span class="text-xs text-slate-400">5 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">O futuro da Auditoria: Digital e
+                            Inteligente
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Descubra como a inteligência artificial está
+                            revolucionando
+                            a transparência e a precisão nos processos de auditoria moderna.</p>
+                        <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop"
+                            alt="Cultura de Inovação" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase">Tecnologia</span>
+                            <span class="text-xs text-slate-400">8 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Como escalar sua infraestrutura
+                            sem perder a
+                            segurança</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Dicas essenciais para gestores de TI que buscam
+                            escalabilidade ágil com foco total em proteção de dados.</p>
+                        <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop"
+                            alt="Gestão de RH" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">Consultoria</span>
+                            <span class="text-xs text-slate-400">4 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Consultoria, assessoria ou
+                            mentoria?</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Adaptamos à sua realidade. Entenda qual
+                            modalidade
+                            é a melhor para o momento da sua empresa.</p>
+                        <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
+                    </div>
+                </article>
             </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Como escalar sua infraestrutura sem perder a
-              segurança</h3>
-            <p class="text-slate-600 text-sm mb-6 flex-grow">Dicas essenciais para gestores de TI que buscam
-              escalabilidade ágil com foco total em proteção de dados.</p>
-            <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
-          </div>
-        </article>
+        </div>
+    </section>
 
-        <!-- Post 3 -->
-        <article class="blog-card bg-slate-50 rounded-2xl overflow-hidden flex flex-col border border-slate-100">
-          <div class="aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop"
-              alt="Gestão de RH" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold uppercase">Recursos
-                Humanos</span>
-              <span class="text-xs text-slate-400">4 min de leitura</span>
+    <!-- ========== FOOTER ========== -->
+    <footer id="contato" class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <span class="text-3xl font-bold font-display">3<span
+                                class="text-secondary-light">kap</span></span>
+                        <span class="text-xs uppercase tracking-widest text-white/60">Auditoria</span>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Oferecemos soluções inovadoras com expertise e confiabilidade para impulsionar o sucesso do seu
+                        negócio. Apaixonados por finanças, com pilares em compartilhar conhecimento, atender com
+                        qualidade
+                        e desenvolver soluções tecnológicas.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/3kap-auditoria-e-consultoria/"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/3kapauditoria/"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.315 2c2.43 0 2.717.01 3.674.053 1.05.047 1.722.213 2.333.448a4.706 4.706 0 011.681 1.097 4.706 4.706 0 011.097 1.681c.235.611.401 1.283.448 2.333.043.957.053 1.244.053 3.674s-.01 2.717-.053 3.674c-.047 1.05-.213 1.722-.448 2.333a4.706 4.706 0 01-1.097 1.681 4.706 4.706 0 01-1.681 1.097c-.611.235-1.283.401-2.333.448-.957.043-1.244.053-3.674.053s-2.717-.01-3.674-.053c-1.05-.047-1.722-.213-2.333-.448a4.706 4.706 0 01-1.681-1.097 4.706 4.706 0 01-1.097-1.681c-.235-.611-.401-1.283-.448-2.333-.043-.957-.053-1.244-.053-3.674s.01-2.717.053-3.674c.047-1.05.213-1.722.448-2.333a4.706 4.706 0 011.097-1.681A4.706 4.706 0 015.41 2.448c.611-.235 1.283-.401 2.333-.448C8.674 2.01 8.96 2 11.39 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Empresa -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Empresa</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="#sobre" class="hover:text-secondary-light transition-colors">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="hover:text-secondary-light transition-colors">Nossos Serviços</a>
+                        </li>
+                        <li><a href="cursos.html" class="hover:text-secondary-light transition-colors">3kap Academy</a>
+                        </li>
+                        <li><a href="#blog" class="hover:text-secondary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Suporte -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Links Úteis</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="#blog" class="hover:text-secondary-light transition-colors">Blog & Artigos</a></li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Política de Privacidade</a>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Termos de Uso</a></li>
+                        <li><a href="#contato" class="hover:text-secondary-light transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <!-- Contato -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Contato</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Av. Prof. Magalhães Neto, 1550 - 7º Andar<br>Pituba, 41810-011<br>Salvador - BA</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>(71) 99915-3592</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>contato@3kap.com.br</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Retenção de talentos na era do trabalho
-              híbrido</h3>
-            <p class="text-slate-600 text-sm mb-6 flex-grow">Estratégias eficazes para manter sua equipe motivada e
-              conectada, independente da barreira física.</p>
-            <a href="#" class="text-secondary font-semibold text-sm hover:underline">Ler artigo completo</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-white/40">© 2024 3KAP Auditoria | CNPJ: 42.481.165/0001-72. Todos os direitos
+                    reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- ========== FOOTER ========== -->
-  <footer id="contato" class="bg-primary text-white pt-20 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <!-- Brand -->
-        <div class="space-y-6">
-          <div class="flex items-center gap-2">
-            <span class="text-3xl font-bold font-display">3<span class="text-secondary-light">kap</span></span>
-            <span class="text-xs uppercase tracking-widest text-white/60">Group</span>
-          </div>
-          <p class="text-white/70 text-sm leading-relaxed">
-            Oferecemos soluções inovadoras com expertise e confiabilidade para impulsionar o sucesso do seu negócio.
-          </p>
-          <div class="flex gap-4">
-            <a href="https://www.linkedin.com/company/3kap-auditoria-e-consultoria/"
-              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista"
+        target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div
+            class="relative w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
-            <a href="#"
-              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12.315 2c2.43 0 2.717.01 3.674.053 1.05.047 1.722.213 2.333.448a4.706 4.706 0 011.681 1.097 4.706 4.706 0 011.097 1.681c.235.611.401 1.283.448 2.333.043.957.053 1.244.053 3.674s-.01 2.717-.053 3.674c-.047 1.05-.213 1.722-.448 2.333a4.706 4.706 0 01-1.097 1.681 4.706 4.706 0 01-1.681 1.097c-.611.235-1.283.401-2.333.448-.957.043-1.244.053-3.674.053s-2.717-.01-3.674-.053c-1.05-.047-1.722-.213-2.333-.448a4.706 4.706 0 01-1.681-1.097 4.706 4.706 0 01-1.097-1.681c-.235-.611-.401-1.283-.448-2.333-.043-.957-.053-1.244-.053-3.674s.01-2.717.053-3.674c.047-1.05.213-1.722.448-2.333a4.706 4.706 0 011.097-1.681A4.706 4.706 0 015.41 2.448c.611-.235 1.283-.401 2.333-.448C8.674 2.01 8.96 2 11.39 2z" />
-              </svg>
-            </a>
-          </div>
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
         </div>
-        <!-- Empresa -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6 font-display">Empresa</h3>
-          <ul class="space-y-4 text-sm text-white/70">
-            <li><a href="#sobre" class="hover:text-secondary-light transition-colors">Sobre Nós</a></li>
-            <li><a href="#servicos" class="hover:text-secondary-light transition-colors">Nossos Serviços</a></li>
-            <li><a href="#academy" class="hover:text-secondary-light transition-colors">3kap Academy</a></li>
-            <li><a href="#" class="hover:text-secondary-light transition-colors">Carreiras</a></li>
-          </ul>
-        </div>
-        <!-- Suporte -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6 font-display">Links Úteis</h3>
-          <ul class="space-y-4 text-sm text-white/70">
-            <li><a href="#blog" class="hover:text-secondary-light transition-colors">Blog & Artigos</a></li>
-            <li><a href="#" class="hover:text-secondary-light transition-colors">Política de Privacidade</a></li>
-            <li><a href="#" class="hover:text-secondary-light transition-colors">Termos de Uso</a></li>
-            <li><a href="#contato" class="hover:text-secondary-light transition-colors">Contato</a></li>
-          </ul>
-        </div>
-        <!-- Contato -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6 font-display">Contato</h3>
-          <ul class="space-y-4 text-sm text-white/70">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>Brasil</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>contato@3kap.com.br</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="pt-8 border-t border-white/10 text-center">
-        <p class="text-xs text-white/40">© 2024 3KAP Group. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+    </a>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/557184812306?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista"
-    target="_blank" class="fixed bottom-6 right-6 z-50 group">
-    <div
-      class="relative w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse hover:scale-110 transition-transform">
-      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-      </svg>
-    </div>
-  </a>
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-  <script>
-    // Mobile Menu Toggle
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    // Close menu when clicking links
-    const mobileLinks = menu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => menu.classList.add('hidden'));
-    });
-  </script>
+        // Close menu when clicking links
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
 </body>
 
 </html>

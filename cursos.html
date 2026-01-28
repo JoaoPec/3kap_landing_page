@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3KAP Academy - Cursos</title>
+    <meta name="description"
+        content="Cursos da 3KAP Academy - Tenha uma carreira de sucesso praticando Lifelong Learning.">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2D5A27',
+                            light: '#3A6B35',
+                            dark: '#1E3D1A'
+                        },
+                        secondary: {
+                            DEFAULT: '#4A8C40',
+                            light: '#5FA055',
+                            dark: '#3D7335'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Sora', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3A6B35, #5FA055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: #3A6B35;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(45, 90, 39, 0.2);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .whatsapp-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: #25D366;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="text-3xl font-bold font-display text-primary">
+                        3<span class="gradient-text">kap</span>
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Academy</span>
+                </a>
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Home</a>
+                    <a href="index.html#sobre"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Sobre</a>
+                    <a href="index.html#servicos"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Serviços</a>
+                    <a href="#" class="relative text-sm font-medium text-primary nav-link">Cursos</a>
+                    <a href="index.html#blog"
+                        class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Blog</a>
+
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pela%203KAP%20Academy%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+                        target="_blank"
+                        class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg font-semibold text-white text-sm bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25">
+                        Fale Conosco
+                    </a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html"
+                    class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Home</a>
+                <a href="index.html#sobre"
+                    class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Sobre</a>
+                <a href="index.html#servicos"
+                    class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Serviços</a>
+                <a href="#" class="block py-3 px-4 text-primary font-medium bg-slate-50 rounded-lg">Cursos</a>
+                <a href="index.html#blog"
+                    class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Blog</a>
+                <div class="pt-2">
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pela%203KAP%20Academy%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+                        target="_blank"
+                        class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light">
+                        Fale Conosco
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span
+                    class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
+                    🎓 3kap Academy
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">
+                    Tenha uma carreira de <span class="text-secondary-light">sucesso</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 mb-8">
+                    Torne a sua vida mais prática! Otimize suas atividades com nossos cursos e materiais.
+                    Pratique Lifelong Learning e assine a 3KAP Academy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CURSOS ========== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+                    Nossos Cursos
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
+                    Escolha seu <span class="gradient-text">próximo passo</span>
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Cursos desenvolvidos por especialistas para impulsionar sua carreira na área financeira e contábil.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Curso 1 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">Cálculos</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Cálculos Trabalhista</h3>
+                        <p class="text-slate-600 text-sm mb-6">Aprenda a realizar cálculos trabalhistas de forma prática
+                            e eficiente.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20C%C3%A1lculos%20Trabalhista"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase mb-3">Compliance</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Compliance Trabalhista</h3>
+                        <p class="text-slate-600 text-sm mb-6">Domine as melhores práticas de compliance na área
+                            trabalhista.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Compliance%20Trabalhista"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-primary-light to-secondary flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">Governança</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Curso Comitê de Auditoria</h3>
+                        <p class="text-slate-600 text-sm mb-6">Entenda o papel e funcionamento do comitê de auditoria
+                            nas organizações.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20Comit%C3%AA%20de%20Auditoria"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-primary-light to-secondary hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 4 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">Gestão</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Curso Controladoria</h3>
+                        <p class="text-slate-600 text-sm mb-6">Desenvolva habilidades essenciais para a área de
+                            controladoria.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Controladoria"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 5 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase mb-3">BI</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Curso de Power BI</h3>
+                        <p class="text-slate-600 text-sm mb-6">Aprenda a criar dashboards e relatórios profissionais com
+                            Power BI.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Power%20BI"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 6 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-primary-light to-secondary flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">Investigação</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Curso Fraude Contábil</h3>
+                        <p class="text-slate-600 text-sm mb-6">Identifique e previna fraudes contábeis em sua
+                            organização.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Fraude%20Cont%C3%A1bil"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-primary-light to-secondary hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 7 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">Normas</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Normas de Auditoria Contábil</h3>
+                        <p class="text-slate-600 text-sm mb-6">Domine as principais normas de auditoria contábil
+                            aplicáveis.</p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Normas%20de%20Auditoria%20Cont%C3%A1bil"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Curso 8 -->
+                <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase mb-3">Prática</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Testes de Auditoria Contábil</h3>
+                        <p class="text-slate-600 text-sm mb-6">Aprenda a aplicar testes de auditoria de forma eficiente.
+                        </p>
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20de%20Testes%20de%20Auditoria%20Cont%C3%A1bil"
+                            target="_blank"
+                            class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">
+                            Acesse Já
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10 text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display">
+                        Não encontrou o que procura?
+                    </h2>
+                    <p class="text-lg text-white/80 mb-8">
+                        Entre em contato conosco! Temos mais opções de cursos e podemos criar treinamentos
+                        personalizados para sua empresa.
+                    </p>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20cursos%20da%203KAP%20Academy"
+                        target="_blank"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-primary bg-white hover:bg-slate-100 transition-all hover:-translate-y-0.5 shadow-lg group">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <span class="text-3xl font-bold font-display">3<span
+                                class="text-secondary-light">kap</span></span>
+                        <span class="text-xs uppercase tracking-widest text-white/60">Academy</span>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Tenha uma carreira de sucesso praticando Lifelong Learning. Cursos desenvolvidos por
+                        especialistas da 3KAP Auditoria.
+                    </p>
+                </div>
+                <!-- Empresa -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Empresa</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="index.html#sobre" class="hover:text-secondary-light transition-colors">Sobre
+                                Nós</a></li>
+                        <li><a href="index.html#servicos" class="hover:text-secondary-light transition-colors">Nossos
+                                Serviços</a></li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">3kap Academy</a></li>
+                        <li><a href="index.html#blog" class="hover:text-secondary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Cursos -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Cursos</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Cálculos Trabalhista</a>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Compliance Trabalhista</a>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Power BI</a></li>
+                        <li><a href="#" class="hover:text-secondary-light transition-colors">Controladoria</a></li>
+                    </ul>
+                </div>
+                <!-- Contato -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Contato</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>(71) 99915-3592</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>contato@3kap.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-white/40">© 2024 3KAP Auditoria | CNPJ: 42.481.165/0001-72. Todos os direitos
+                    reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pela%203KAP%20Academy%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+        target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div
+            class="relative w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </div>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking links
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
+</body>
+
+</html>
