@@ -11,33 +11,33 @@
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Manual da Marca: Bubble Gum → Varela Round; Core Sans → Source Sans 3 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Varela+Round&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind Config -->
+    <!-- Tailwind Config - Cores: #575756 e #56b5af - Manual 3KAP 2021 -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            DEFAULT: '#2D5A27',
-                            light: '#3A6B35',
-                            dark: '#1E3D1A'
+                            DEFAULT: '#575756',
+                            light: '#6b6b6a',
+                            dark: '#454544'
                         },
                         secondary: {
-                            DEFAULT: '#4A8C40',
-                            light: '#5FA055',
-                            dark: '#3D7335'
+                            DEFAULT: '#56b5af',
+                            light: '#6bc4be',
+                            dark: '#45a09a'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['Sora', 'system-ui', 'sans-serif'],
+                        sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
+                        display: ['Varela Round', 'system-ui', 'sans-serif'],
                     }
                 }
             }
@@ -46,7 +46,7 @@
 
     <style>
         .gradient-text {
-            background: linear-gradient(135deg, #3A6B35, #5FA055);
+            background: linear-gradient(135deg, #575756, #56b5af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -59,7 +59,7 @@
             bottom: -4px;
             width: 0;
             height: 2px;
-            background: #3A6B35;
+            background: #56b5af;
             transition: width 0.3s ease;
         }
 
