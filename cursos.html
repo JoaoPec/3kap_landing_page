@@ -109,13 +109,16 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-2">
-                    <span class="text-3xl font-bold font-display text-primary">
-                        3<span class="gradient-text">kap</span>
-                    </span>
-                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Academy</span>
-                </a>
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors" title="Voltar à página inicial"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg><span class="hidden sm:inline">Voltar</span></a>
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center gap-2">
+                        <span class="text-3xl font-bold font-display text-primary">
+                            3<span class="gradient-text">kap</span>
+                        </span>
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Academy</span>
+                    </a>
+                </div>
                 <!-- Desktop Nav - Menu validado pelo diretor -->
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="index.html"
@@ -214,6 +217,7 @@
 
     <!-- ========== HERO ========== -->
     <section class="relative pt-32 pb-20 overflow-hidden">
+        <a href="index.html" class="absolute top-32 left-4 sm:left-6 lg:left-8 z-20 flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors" title="Voltar à página inicial"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg><span>Voltar</span></a>
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
         <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
