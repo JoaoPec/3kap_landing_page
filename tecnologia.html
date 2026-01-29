@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento de Sistemas Personalizados | 3KAP</title>
+    <meta name="description"
+        content="Soluções em tecnologia sob medida: sistemas web e mobile para auditoria, RH, gestão e compliance. Desenvolvimento 3KAP.">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2D5A27',
+                            light: '#3A6B35',
+                            dark: '#1E3D1A'
+                        },
+                        secondary: {
+                            DEFAULT: '#4A8C40',
+                            light: '#5FA055',
+                            dark: '#3D7335'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Sora', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3A6B35, #5FA055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: #3A6B35;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(45, 90, 39, 0.2);
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        .whatsapp-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: #25D366;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="text-3xl font-bold font-display text-primary">
+                        3<span class="gradient-text">kap</span>
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Group</span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Home</a>
+                    <a href="index.html#sobre" class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Quem Somos</a>
+
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+                            Áreas de Atuação
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[320px] max-h-[80vh] overflow-y-auto">
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Auditoria</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Recursos Humanos (RH)</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Tecnologia da Informação (TI)</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Consultoria em LGPD</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">ISO 27001</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">ISO 9001</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Sites Institucionais</a>
+                                <a href="index.html#servicos" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Landing Pages</a>
+                                <a href="tecnologia.html" class="block px-4 py-2.5 text-sm text-primary font-medium bg-slate-50 rounded-lg">Desenvolvimento de Sistemas Personalizados</a>
+                                <a href="index.html#academy" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors mt-1 border-t border-slate-100 pt-2">Treinamentos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+                            Conteúdos
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[200px]">
+                                <a href="cursos.html" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">3kap Academy (Cursos)</a>
+                                <a href="index.html#blog" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#contato" class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg font-semibold text-white text-sm bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25">
+                        Contato
+                    </a>
+                </nav>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Home</a>
+                <a href="index.html#sobre" class="block py-3 px-4 text-slate-600 hover:text-primary transition-colors">Quem Somos</a>
+                <span class="block py-2 px-4 text-xs font-semibold text-slate-400 uppercase">Áreas de Atuação</span>
+                <a href="index.html#servicos" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Auditoria</a>
+                <a href="index.html#servicos" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Recursos Humanos (RH)</a>
+                <a href="index.html#servicos" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Tecnologia da Informação (TI)</a>
+                <a href="index.html#servicos" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Sites Institucionais</a>
+                <a href="index.html#servicos" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Landing Pages</a>
+                <a href="tecnologia.html" class="block py-3 px-4 text-primary font-medium bg-slate-50 rounded-lg">Desenvolvimento de Sistemas Personalizados</a>
+                <a href="index.html#academy" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Treinamentos</a>
+                <span class="block py-2 px-4 text-xs font-semibold text-slate-400 uppercase">Conteúdos</span>
+                <a href="cursos.html" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">3kap Academy (Cursos)</a>
+                <a href="index.html#blog" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary transition-colors">Blog</a>
+                <div class="pt-2">
+                    <a href="index.html#contato" class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light">Contato</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
+                    💻 Tecnologia
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">
+                    Desenvolvimento de <span class="text-secondary-light">Sistemas Personalizados</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 mb-8">
+                    Soluções web e mobile sob medida para auditoria, RH, gestão e compliance. 
+                    Automatizamos processos e entregamos sistemas que se adaptam ao seu negócio.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== O QUE FAZEMOS ========== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+                    Nossa atuação
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
+                    Tecnologia que <span class="gradient-text">entende o seu negócio</span>
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Desenvolvemos sistemas exclusivos para escritórios de contabilidade, departamentos de auditoria, 
+                    RH e áreas de compliance. Integração com seus processos, relatórios sob demanda e suporte contínuo.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 font-display">Web & Mobile</h3>
+                    <p class="text-slate-600 text-sm">Plataformas responsivas e aplicativos nativos ou PWA para acesso em qualquer dispositivo.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 font-display">Automação</h3>
+                    <p class="text-slate-600 text-sm">Workflows, notificações e integrações que reduzem trabalho manual e erros.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary-light to-secondary flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 font-display">Dashboards & Relatórios</h3>
+                    <p class="text-slate-600 text-sm">Indicadores em tempo real, exportação e visualizações prontas para decisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section id="projetos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                    Portfólio
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">
+                    Projetos em <span class="gradient-text">destaque</span>
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Alguns dos sistemas desenvolvidos pela 3KAP para clientes de auditoria, contabilidade e gestão.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop" alt="Dashboard" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Contabilidade</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Sistema de Gestão para Escritório Contábil</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Controle de clientes, tarefas e prazos em um único painel. Módulos de obrigações acessórias, checklist de documentos e notificações automáticas.</p>
+                        <p class="text-xs text-slate-400">Cliente do setor de serviços contábeis · 2024</p>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Portal" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Auditoria</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Portal do Cliente – Acompanhamento de Auditoria</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Área logada para o cliente acompanhar o andamento do trabalho, enviar documentos e visualizar relatórios parciais com segurança.</p>
+                        <p class="text-xs text-slate-400">Empresa de auditoria independente · 2024</p>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-primary-light/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop" alt="App RH" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-semibold">Mobile</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">RH</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">App de Ponto e Folha de Pagamento</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Registro de ponto via smartphone com geolocalização, aprovação de horas e integração com folha. Versão web para gestores e RH.</p>
+                        <p class="text-xs text-slate-400">Grupo empresarial · 2023</p>
+                    </div>
+                </article>
+
+                <!-- Projeto 4 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop" alt="Dashboard Auditoria" class="w-full h-full object-cover opacity-80">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Auditoria</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Dashboard de Indicadores de Auditoria</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Painel com métricas em tempo real: horas por projeto, status por equipe, alertas de prazo e exportação para relatórios gerenciais.</p>
+                        <p class="text-xs text-slate-400">Sócio de auditoria · 2023</p>
+                    </div>
+                </article>
+
+                <!-- Projeto 5 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop" alt="Compliance" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Compliance / LGPD</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Sistema de Controle de Conformidade LGPD</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Checklist de adequação, registro de evidências, mapeamento de dados e relatórios para DPO e auditoria de privacidade.</p>
+                        <p class="text-xs text-slate-400">Empresa de serviços · 2024</p>
+                    </div>
+                </article>
+
+                <!-- Projeto 6 -->
+                <article class="project-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
+                    <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary-light/20 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop" alt="ERP" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">Web</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Gestão</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Módulo de Controle de Inventário e Ativos</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Cadastro de ativos, movimentações, contagem cíclica e integração com o sistema contábil para conciliação e auditoria.</p>
+                        <p class="text-xs text-slate-400">Indústria · 2023</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-3xl"></div>
+                <div class="relative z-10 text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display">
+                        Quer um sistema sob medida para sua empresa?
+                    </h2>
+                    <p class="text-lg text-white/80 mb-8">
+                        Conte sua necessidade. Desenvolvemos desde portais e dashboards até aplicativos mobile, 
+                        sempre alinhados aos processos da sua área.
+                    </p>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20desenvolvimento%20de%20sistemas%20personalizados%20para%20minha%20empresa"
+                        target="_blank"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-primary bg-white hover:bg-slate-100 transition-all hover:-translate-y-0.5 shadow-lg group">
+                        Falar com a equipe de tecnologia
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <span class="text-3xl font-bold font-display">3<span class="text-secondary-light">kap</span></span>
+                        <span class="text-xs uppercase tracking-widest text-white/60">Group</span>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Soluções em auditoria, tecnologia e RH. Desenvolvemos sistemas personalizados para otimizar processos e resultados.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/3kap-auditoria-e-consultoria/" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                        </a>
+                        <a href="https://www.instagram.com/3kapauditoria/" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.717.01 3.674.053 1.05.047 1.722.213 2.333.448a4.706 4.706 0 011.681 1.097 4.706 4.706 0 011.097 1.681c.235.611.401 1.283.448 2.333.043.957.053 1.244.053 3.674s-.01 2.717-.053 3.674c-.047 1.05-.213 1.722-.448 2.333a4.706 4.706 0 01-1.097 1.681 4.706 4.706 0 01-1.681 1.097c-.611.235-1.283.401-2.333.448-.957.043-1.244.053-3.674.053s-2.717-.01-3.674-.053c-1.05-.047-1.722-.213-2.333-.448a4.706 4.706 0 01-1.681-1.097 4.706 4.706 0 01-1.097-1.681c-.235-.611-.401-1.283-.448-2.333-.043-.957-.053-1.244-.053-3.674s.01-2.717.053-3.674c.047-1.05.213-1.722.448-2.333a4.706 4.706 0 011.097-1.681A4.706 4.706 0 015.41 2.448c.611-.235 1.283-.401 2.333-.448C8.674 2.01 8.96 2 11.39 2z" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Empresa</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="index.html#sobre" class="hover:text-secondary-light transition-colors">Quem Somos</a></li>
+                        <li><a href="index.html#servicos" class="hover:text-secondary-light transition-colors">Serviços</a></li>
+                        <li><a href="tecnologia.html" class="hover:text-secondary-light transition-colors">Sistemas Personalizados</a></li>
+                        <li><a href="cursos.html" class="hover:text-secondary-light transition-colors">3kap Academy</a></li>
+                        <li><a href="index.html#blog" class="hover:text-secondary-light transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Links Úteis</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="tecnologia.html#projetos" class="hover:text-secondary-light transition-colors">Projetos</a></li>
+                        <li><a href="index.html#contato" class="hover:text-secondary-light transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 font-display">Contato</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Av. Prof. Magalhães Neto, 1550 - 7º Andar<br>Pituba, Salvador - BA</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>(71) 99915-3592</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-secondary-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>contato@3kap.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-white/40">© 2024 3KAP Auditoria | CNPJ: 42.481.165/0001-72. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20desenvolvimento%20de%20sistemas%20personalizados"
+        target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="relative w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </div>
+    </a>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+    </script>
+</body>
+
+</html>
