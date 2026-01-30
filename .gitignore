@@ -7,3 +7,6 @@ db/
 vendor/
 .env
 *.log
+
+# assets
+assets/img/uploads/
