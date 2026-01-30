@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Auditoria, RH e TI - 3KAP</title>
+    <meta name="description" content="Artigos e insights sobre auditoria, tecnologia, RH e compliance. 3KAP.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: { DEFAULT: '#575756', light: '#6b6b6a', dark: '#454544' }, secondary: { DEFAULT: '#56b5af', light: '#6bc4be', dark: '#45a09a' } }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], display: ['Sora', 'system-ui', 'sans-serif'] } } } }
+    </script>
+    <style>
+        .gradient-text { background: linear-gradient(135deg, #575756, #56b5af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #56b5af; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        html { scroll-behavior: smooth; }
+        .blog-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -12px rgba(86, 181, 175, 0.2); }
+        .cat-btn.active { background: #56b5af; color: white; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="text-3xl font-bold font-display text-primary">3<span class="gradient-text">kap</span></span>
+                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Group</span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Home</a>
+                    <a href="index.html#sobre" class="relative text-sm font-medium text-slate-600 hover:text-primary transition-colors nav-link">Quem Somos</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">Áreas de Atuação <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[240px]">
+                                <a href="auditoria.html" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Auditoria</a>
+                                <a href="rh.html" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Recursos Humanos (RH)</a>
+                                <a href="ti.html" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">Tecnologia da Informação (TI)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors">Conteúdos <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-2 min-w-[200px]">
+                                <a href="cursos.html" class="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">3kap Academy</a>
+                                <a href="blog.html" class="block px-4 py-2.5 text-sm text-primary font-medium bg-slate-50 rounded-lg">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2"><a href="https://www.linkedin.com/company/3kap-auditoria-e-consultoria/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white text-slate-600 transition-colors" title="LinkedIn"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a><a href="https://www.instagram.com/3kap_auditoria/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white text-slate-600 transition-colors" title="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></div>
+                    <a href="index.html#contato" class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg font-semibold text-white text-sm bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">Contato</a>
+                </nav>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" class="block py-3 px-4 text-slate-600 hover:text-primary">Home</a>
+                <a href="index.html#sobre" class="block py-3 px-4 text-slate-600 hover:text-primary">Quem Somos</a>
+                <span class="block py-2 px-4 text-xs font-semibold text-slate-400 uppercase">Áreas de Atuação</span>
+                <a href="auditoria.html" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary">Auditoria</a>
+                <a href="rh.html" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary">Recursos Humanos (RH)</a>
+                <a href="ti.html" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary">TI</a>
+                <span class="block py-2 px-4 text-xs font-semibold text-slate-400 uppercase">Conteúdos</span>
+                <a href="cursos.html" class="block py-2 pl-6 pr-4 text-slate-600 hover:text-primary">3kap Academy</a>
+                <a href="blog.html" class="block py-3 px-4 text-primary font-medium bg-slate-50 rounded-lg">Blog</a>
+                <div class="pt-4 flex justify-center gap-3"><a href="https://www.linkedin.com/company/3kap-auditoria-e-consultoria/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white text-slate-600 transition-colors" title="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a><a href="https://www.instagram.com/3kap_auditoria/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white text-slate-600 transition-colors" title="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></div>
+                <div class="pt-2"><a href="index.html#contato" class="block w-full text-center py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light">Contato</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Blog -->
+    <section class="relative pt-32 pb-16 overflow-hidden">
+        <a href="index.html" class="absolute top-32 left-4 sm:left-6 lg:left-8 z-20 flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors" title="Voltar"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg><span>Voltar</span></a>
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">Insights & Conhecimento</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">Blog <span class="text-secondary-light">3KAP</span></h1>
+                <p class="text-lg md:text-xl text-white/80">Tendências em auditoria, tecnologia, RH e compliance. Conteúdo para gestores e profissionais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo: categorias + grid de artigos -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Sidebar: Categorias -->
+                <aside class="lg:w-64 flex-shrink-0">
+                    <div class="lg:sticky lg:top-28">
+                        <h2 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Categorias</h2>
+                        <nav class="space-y-1">
+                            <a href="#" class="cat-btn active block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 bg-secondary/10 text-secondary border border-secondary/20">Todos</a>
+                            <a href="#" class="cat-btn block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-primary transition-colors">Auditoria</a>
+                            <a href="#" class="cat-btn block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-primary transition-colors">RH</a>
+                            <a href="#" class="cat-btn block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-primary transition-colors">TI</a>
+                            <a href="#" class="cat-btn block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-primary transition-colors">Compliance</a>
+                        </nav>
+                        <div class="mt-8 pt-8 border-t border-slate-200">
+                            <p class="text-xs text-slate-400">Artigos por especialistas 3KAP. Dúvidas? Fale conosco.</p>
+                            <a href="index.html#contato" class="mt-2 inline-block text-sm font-medium text-secondary hover:underline">Contato</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Grid de artigos -->
+                <div class="flex-1 min-w-0">
+                    <div class="grid md:grid-cols-2 gap-8" id="blog-grid">
+                        <!-- Artigo 1 - com link para página de exemplo -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="auditoria">
+                            <a href="blog-artigo-exemplo.html" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1454165833767-027ffea10c4b?w=600&auto=format&fit=crop" alt="Auditoria Digital" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">Auditoria</span>
+                                    <span class="text-xs text-slate-400">5 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="blog-artigo-exemplo.html" class="hover:text-secondary transition-colors">O futuro da Auditoria: Digital e Inteligente</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Descubra como a inteligência artificial está revolucionando a transparência e a precisão nos processos de auditoria moderna.</p>
+                                <a href="blog-artigo-exemplo.html" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+
+                        <!-- Artigo 2 -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="ti">
+                            <a href="#" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop" alt="Infraestrutura TI" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase">TI</span>
+                                    <span class="text-xs text-slate-400">8 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="#" class="hover:text-secondary transition-colors">Como escalar sua infraestrutura sem perder a segurança</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Dicas essenciais para gestores de TI que buscam escalabilidade ágil com foco total em proteção de dados.</p>
+                                <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+
+                        <!-- Artigo 3 -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="rh">
+                            <a href="#" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop" alt="Consultoria" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">RH</span>
+                                    <span class="text-xs text-slate-400">4 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="#" class="hover:text-secondary transition-colors">Consultoria, assessoria ou mentoria?</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Adaptamos à sua realidade. Entenda qual modalidade é a melhor para o momento da sua empresa.</p>
+                                <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+
+                        <!-- Artigo 4 -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="compliance">
+                            <a href="#" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop" alt="LGPD" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase">Compliance</span>
+                                    <span class="text-xs text-slate-400">6 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="#" class="hover:text-secondary transition-colors">LGPD na prática: primeiros passos para sua empresa</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Checklist objetivo para começar a adequação à Lei Geral de Proteção de Dados sem travar a operação.</p>
+                                <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+
+                        <!-- Artigo 5 -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="auditoria">
+                            <a href="#" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop" alt="Demonstrações financeiras" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">Auditoria</span>
+                                    <span class="text-xs text-slate-400">7 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="#" class="hover:text-secondary transition-colors">Quando sua empresa precisa de auditoria independente?</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Exigências legais, investidores e bancos: em quais situações a auditoria das demonstrações é obrigatória ou recomendada.</p>
+                                <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+
+                        <!-- Artigo 6 -->
+                        <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100" data-category="ti">
+                            <a href="#" class="block aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop" alt="Sistemas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase">TI</span>
+                                    <span class="text-xs text-slate-400">5 min de leitura</span>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 font-display">
+                                    <a href="#" class="hover:text-secondary transition-colors">Sistemas sob medida para escritórios de auditoria e contabilidade</a>
+                                </h2>
+                                <p class="text-slate-600 text-sm mb-6 flex-grow">Como automatizar prazos, papéis de trabalho e relatórios sem perder o controle e a rastreabilidade.</p>
+                                <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1">Ler artigo completo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div><div class="flex items-center gap-2 mb-4"><span class="text-3xl font-bold font-display">3<span class="text-secondary-light">kap</span></span><span class="text-xs uppercase tracking-widest text-white/60">Group</span></div>
+                    <p class="text-white/70 text-sm leading-relaxed">Soluções em auditoria, tecnologia e RH para impulsionar seu negócio.</p></div>
+                <div><h3 class="text-lg font-semibold mb-6 font-display">Empresa</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li><a href="index.html#sobre" class="hover:text-secondary-light">Quem Somos</a></li>
+                        <li><a href="auditoria.html" class="hover:text-secondary-light">Auditoria</a></li>
+                        <li><a href="ti.html" class="hover:text-secondary-light">TI</a></li>
+                        <li><a href="cursos.html" class="hover:text-secondary-light">3kap Academy</a></li>
+                        <li><a href="blog.html" class="hover:text-secondary-light">Blog</a></li>
+                    </ul></div>
+                <div><h3 class="text-lg font-semibold mb-6 font-display">Contato</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li>Av. Prof. Magalhães Neto, 1550 - 7º Andar, Pituba, Salvador - BA</li>
+                        <li>(71) 99915-3592</li>
+                        <li>contato@3kap.com.br</li>
+                    </ul></div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center"><p class="text-xs text-white/40">© <script>document.write(new Date().getFullYear())</script> 3KAP Auditoria. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+    <script>const btn=document.getElementById('mobile-menu-btn');const menu=document.getElementById('mobile-menu');btn.addEventListener('click',()=>menu.classList.toggle('hidden'));menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>menu.classList.add('hidden')));</script>
+</body>
+</html>
