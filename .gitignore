@@ -1,0 +1,9 @@
+# SQLite
+db/
+*.sqlite
+*.sqlite3
+
+# PHP
+vendor/
+.env
+*.log
