@@ -49,6 +49,17 @@ require __DIR__ . '/inc/header.php';
             <div class="prose prose-slate max-w-none text-slate-700">
                 <?= $post['content'] ?>
             </div>
+            <?php
+            $shareUrl = (isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'https') . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . url('blog-post.php?slug=' . urlencode($post['slug']));
+            $linkedInShare = 'https://www.linkedin.com/sharing/share-offsite/?url=' . rawurlencode($shareUrl);
+            ?>
+            <div class="mt-12 pt-8 border-t border-slate-200">
+                <p class="text-sm font-medium text-slate-600 mb-3">Compartilhar este artigo</p>
+                <a href="<?= htmlspecialchars($linkedInShare) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A66C2] text-white text-sm font-semibold hover:bg-[#004182] transition-colors" title="Compartilhar no LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    Compartilhar no LinkedIn
+                </a>
+            </div>
         </div>
     </article>
 <?php require __DIR__ . '/inc/footer.php'; ?>
