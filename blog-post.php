@@ -47,7 +47,14 @@ require __DIR__ . '/inc/header.php';
             </div>
             <?php endif; ?>
             <div class="prose prose-slate max-w-none text-slate-700">
-                <?= $post['content'] ?>
+                <?php
+                // Conteúdo é HTML armazenado no banco; exibir sem escape para renderizar tags (p, h3, ul, strong, etc.)
+                $content = $post['content'] ?? '';
+                if (strpos($content, '&lt;') !== false || strpos($content, '&gt;') !== false) {
+                    $content = html_entity_decode($content, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                }
+                echo $content;
+                ?>
             </div>
             <?php
             $shareUrl = (isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'https') . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . url('blog-post.php?slug=' . urlencode($post['slug']));
