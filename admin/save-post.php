@@ -38,6 +38,7 @@ if ($imageUrl === null) {
     $imageUrl = trim($_POST['image_url'] ?? '') ?: null;
 }
 
+$videoUrl = trim($_POST['video_url'] ?? '') ?: null;
 $data = [
     'title' => trim($_POST['title'] ?? ''),
     'slug' => trim($_POST['slug'] ?? '') ?: null,
@@ -45,6 +46,7 @@ $data = [
     'content' => $_POST['content'] ?? '',
     'category' => $category,
     'image_url' => $imageUrl,
+    'video_url' => $videoUrl,
     'published' => isset($_POST['published']),
 ];
 

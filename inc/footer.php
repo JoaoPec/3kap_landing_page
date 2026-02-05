@@ -20,13 +20,13 @@
                         <li><a href="<?= url('index.php') ?>#sobre" class="hover:text-secondary-light transition-colors">Sobre Nós</a></li>
                         <li><a href="<?= url('index.php') ?>#servicos" class="hover:text-secondary-light transition-colors">Nossos Serviços</a></li>
                         <li><a href="<?= url('servicos/cursos.php') ?>" class="hover:text-secondary-light transition-colors">3kap Academy</a></li>
-                        <li><a href="<?= url('blog.php') ?>" class="hover:text-secondary-light transition-colors">Blog</a></li>
+                        <li><a href="<?= url('blog.php') ?>" class="hover:text-secondary-light transition-colors">Artigos</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-6 font-display">Links Úteis</h3>
                     <ul class="space-y-4 text-sm text-white/70">
-                        <li><a href="<?= url('blog.php') ?>" class="hover:text-secondary-light transition-colors">Blog & Artigos</a></li>
+                        <li><a href="<?= url('blog.php') ?>" class="hover:text-secondary-light transition-colors">Artigos</a></li>
                         <li><a href="#" class="hover:text-secondary-light transition-colors">Política de Privacidade</a></li>
                         <li><a href="#" class="hover:text-secondary-light transition-colors">Termos de Uso</a></li>
                         <li><a href="<?= url('index.php') ?>#contato" class="hover:text-secondary-light transition-colors">Contato</a></li>

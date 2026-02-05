@@ -32,4 +32,9 @@ function initBlogTable(PDO $pdo): void {
             updated_at DATETIME
         )
     ");
+    try {
+        $pdo->exec('ALTER TABLE blog_posts ADD COLUMN video_url TEXT');
+    } catch (PDOException $e) {
+        if (strpos($e->getMessage(), 'duplicate column name') === false) throw $e;
+    }
 }

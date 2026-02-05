@@ -107,6 +107,14 @@ $isCustomCategory = !in_array($postCategory, $fixedCategories, true);
                     <?php endif; ?>
                 </div>
                 <div>
+                    <label for="video_url" class="block text-sm font-medium text-slate-700 mb-2">Vídeo (YouTube, opcional)</label>
+                    <input type="url" name="video_url" id="video_url"
+                        value="<?= htmlspecialchars($post['video_url'] ?? '') ?>"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition"
+                        placeholder="https://www.youtube.com/watch?v=... ou https://youtu.be/...">
+                    <p class="mt-1 text-xs text-slate-500">Cole o link do vídeo do YouTube. O player será exibido no artigo.</p>
+                </div>
+                <div>
                     <label for="content" class="block text-sm font-medium text-slate-700 mb-2">Conteúdo (HTML permitido) *</label>
                     <textarea name="content" id="content" required rows="16" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition font-mono text-sm resize-y" placeholder="<p>Parágrafos...</p>"><?= htmlspecialchars($post['content'] ?? '') ?></textarea>
                     <p class="mt-1 text-xs text-slate-500">Use tags HTML: &lt;p&gt;, &lt;h3&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, &lt;a&gt;, etc.</p>

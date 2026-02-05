@@ -6,7 +6,7 @@ require_once __DIR__ . '/db.php';
 
 function blogGetAll(bool $publishedOnly = true): array {
     $pdo = getDb();
-    $sql = "SELECT id, title, slug, excerpt, category, image_url, created_at, published FROM blog_posts";
+    $sql = "SELECT id, title, slug, excerpt, category, image_url, video_url, created_at, published FROM blog_posts";
     if ($publishedOnly) $sql .= " WHERE published = 1";
     $sql .= " ORDER BY created_at DESC";
     $stmt = $pdo->query($sql);
@@ -53,8 +53,8 @@ function blogCreate(array $data): int {
     $i = 0;
     while (blogSlugExists($slug)) $slug = slugify($data['title']) . '-' . (++$i);
     $stmt = $pdo->prepare("
-        INSERT INTO blog_posts (title, slug, excerpt, content, category, image_url, published, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'))
+        INSERT INTO blog_posts (title, slug, excerpt, content, category, image_url, video_url, published, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     ");
     $stmt->execute([
         $data['title'],
@@ -63,6 +63,7 @@ function blogCreate(array $data): int {
         $data['content'] ?? '',
         $data['category'] ?? 'geral',
         $data['image_url'] ?? null,
+        !empty($data['video_url']) ? trim($data['video_url']) : null,
         isset($data['published']) ? (int)(bool)$data['published'] : 1,
     ]);
     return (int) $pdo->lastInsertId();
@@ -77,7 +78,7 @@ function blogUpdate(int $id, array $data): bool {
     while (blogSlugExists($slug, $id)) $slug = slugify($title) . '-' . (++$i);
     $pdo = getDb();
     $stmt = $pdo->prepare("
-        UPDATE blog_posts SET title = ?, slug = ?, excerpt = ?, content = ?, category = ?, image_url = ?, published = ?, updated_at = datetime('now') WHERE id = ?
+        UPDATE blog_posts SET title = ?, slug = ?, excerpt = ?, content = ?, category = ?, image_url = ?, video_url = ?, published = ?, updated_at = datetime('now') WHERE id = ?
     ");
     return $stmt->execute([
         $title,
@@ -86,6 +87,7 @@ function blogUpdate(int $id, array $data): bool {
         $data['content'] ?? $old['content'],
         $data['category'] ?? $old['category'],
         $data['image_url'] ?? $old['image_url'],
+        array_key_exists('video_url', $data) ? (!empty($data['video_url']) ? trim($data['video_url']) : null) : ($old['video_url'] ?? null),
         isset($data['published']) ? (int)(bool)$data['published'] : (int)$old['published'],
         $id,
     ]);
@@ -99,7 +101,7 @@ function blogDelete(int $id): bool {
 
 function blogGetRecent(int $limit = 3): array {
     $pdo = getDb();
-    $stmt = $pdo->prepare("SELECT id, title, slug, excerpt, category, image_url, created_at FROM blog_posts WHERE published = 1 ORDER BY created_at DESC LIMIT ?");
+    $stmt = $pdo->prepare("SELECT id, title, slug, excerpt, category, image_url, video_url, created_at FROM blog_posts WHERE published = 1 ORDER BY created_at DESC LIMIT ?");
     $stmt->execute([$limit]);
     return $stmt->fetchAll();
 }

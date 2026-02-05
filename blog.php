@@ -2,10 +2,10 @@
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/lib/blog.php';
 
-$pageTitle = 'Blog | Auditoria, RH e TI - 3KAP';
+$pageTitle = 'Artigos | Auditoria, RH e TI - 3KAP';
 $pageDescription = 'Artigos e insights sobre auditoria, tecnologia, RH e compliance. 3KAP.';
-$pageKeywords = 'blog 3KAP, auditoria, TI, RH, compliance';
-$extraHead = '<style>.blog-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px -12px rgba(86,181,175,0.2);}.cat-btn.active{background:#56b5af;color:white;}</style>';
+$pageKeywords = 'artigos 3KAP, auditoria, TI, RH, compliance';
+$extraHead = '<style>.blog-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px -12px rgba(58,58,64,0.25);}.cat-btn.active{background:#4a9b96;color:white;}</style>';
 require __DIR__ . '/inc/head.php';
 require __DIR__ . '/inc/header.php';
 
@@ -19,16 +19,14 @@ if ($filter !== '') {
     $posts = array_filter($posts, fn($p) => strcasecmp($p['category'], $filter) === 0);
 }
 ?>
-    <!-- Hero Blog -->
-    <section class="relative pt-32 pb-16 overflow-hidden">
-        <a href="<?= url('index.php') ?>" class="absolute top-32 left-4 sm:left-6 lg:left-8 z-20 flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors" title="Voltar"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg><span>Voltar</span></a>
+    <!-- Topo Artigos -->
+    <section class="relative pt-28 pb-10 overflow-hidden">
+        <a href="<?= url('index.php') ?>" class="absolute top-28 left-4 sm:left-6 lg:left-8 z-20 flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors" title="Voltar"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg><span>Voltar</span></a>
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
-        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">Insights & Conhecimento</span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">Blog <span class="text-secondary-light">3KAP</span></h1>
-                <p class="text-lg md:text-xl text-white/80">Tendências em auditoria, tecnologia, RH e compliance. Conteúdo para gestores e profissionais.</p>
+            <div class="text-center max-w-2xl mx-auto">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight font-display">Artigos</h1>
             </div>
         </div>
     </section>
@@ -52,7 +50,7 @@ if ($filter !== '') {
                     </div>
                 </aside>
                 <div class="flex-1 min-w-0">
-                    <div class="grid md:grid-cols-2 gap-8" id="blog-grid">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
                         <?php foreach ($posts as $post): ?>
                         <article class="blog-card bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100 transition-transform duration-300">
                             <a href="<?= url('blog-post.php?slug=' . urlencode($post['slug'])) ?>" class="block aspect-video overflow-hidden">
@@ -70,7 +68,7 @@ if ($filter !== '') {
                         </article>
                         <?php endforeach; ?>
                         <?php if (empty($posts)): ?>
-                        <p class="md:col-span-2 text-slate-500 text-center py-12">Nenhum artigo<?= $filter ? ' nesta categoria' : '' ?> ainda.</p>
+                        <p class="md:col-span-2 lg:col-span-3 text-slate-500 text-center py-12">Nenhum artigo<?= $filter ? ' nesta categoria' : '' ?> ainda.</p>
                         <?php endif; ?>
                     </div>
                 </div>

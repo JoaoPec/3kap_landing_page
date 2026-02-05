@@ -35,3 +35,11 @@ function blogImageUrl($url) {
     if (empty($url)) return '';
     return (strpos($url, 'http') === 0) ? $url : asset($url);
 }
+
+/** Extrai o ID do vídeo do YouTube a partir de URL (youtube.com/watch?v=ID, youtu.be/ID). Retorna null se inválido. */
+function youtubeVideoId($url) {
+    if (empty($url) || !is_string($url)) return null;
+    $url = trim($url);
+    if (preg_match('~(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/embed/)([a-zA-Z0-9_-]{11})~', $url, $m)) return $m[1];
+    return null;
+}

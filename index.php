@@ -14,34 +14,31 @@ require __DIR__ . '/inc/header.php';
 $blogPosts = blogGetRecent(3);
 ?>
     <!-- ========== HERO ========== -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
-        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
         <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="max-w-3xl">
-                <div class="animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
-                    <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">🚀 Transformando negócios desde 2015</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up animation-delay-100 font-display opacity-0" style="animation-fill-mode: forwards;">
-                    Inovação e <span class="relative inline-block"><span class="relative z-10">Excelência</span><span class="absolute bottom-2 left-0 right-0 h-3 bg-secondary/40 -z-0"></span></span> em Serviços Empresariais
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
+                    Liderança em <span class="text-secondary-light">Auditoria</span>, TI e RH
                 </h1>
-                <p class="text-lg md:text-xl text-white/80 mb-8 animate-fade-up animation-delay-200 max-w-xl opacity-0" style="animation-fill-mode: forwards;">
-                    <strong class="text-white">Auditoria</strong>, <strong class="text-white">Tecnologia</strong> e <strong class="text-white">Recursos Humanos</strong> para impulsionar seu negócio. Atendimento em todo o Brasil.
+                <p class="text-lg md:text-xl text-white/90 mb-10 max-w-xl animate-fade-up animation-delay-100 opacity-0" style="animation-fill-mode: forwards;">
+                    Confiança e resultados para o seu negócio. Atendimento em todo o Brasil.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-300 opacity-0" style="animation-fill-mode: forwards;">
-                    <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-secondary/25 group">Conheça Nossos Serviços <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-                    <a href="#sobre" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all">Sobre a 3KAP</a>
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-200 opacity-0" style="animation-fill-mode: forwards;">
+                    <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-primary bg-white hover:bg-slate-50 transition-all hover:-translate-y-0.5 shadow-xl group">Conheça Nossos Serviços <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    <a href="#sobre" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold border-2 border-white/80 text-white hover:bg-white/10 transition-all">Sobre a 3KAP</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== SOBRE ========== -->
-    <section id="sobre" class="py-24 bg-white scroll-mt-24">
+    <section id="sobre" class="py-28 bg-white scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-20">
                 <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">Sobre Nós</span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">Conheça a <span class="gradient-text">3KAP</span></h2>
                 <p class="text-lg text-slate-600">A 3KAP é uma empresa de <strong>auditoria</strong>, com soluções integradas de melhores práticas de gestão. Desenvolvemos auditoria contábil, consultoria empresarial e tributária, com utilização de ferramentas tecnológicas. Nossa metodologia é baseada nas melhores práticas internacionais de auditoria contábil. Atendimento em todo o Brasil.</p>
@@ -84,14 +81,14 @@ $blogPosts = blogGetRecent(3);
     </section>
 
     <!-- ========== SERVIÇOS ========== -->
-    <section id="servicos" class="py-24 bg-slate-50 scroll-mt-24">
+    <section id="servicos" class="py-28 bg-slate-100 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-20">
                 <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">Nossos Serviços</span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">Soluções <span class="gradient-text">Completas</span> para seu Negócio</h2>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card relative bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                <div class="service-card relative bg-white rounded-2xl p-8 shadow-xl border border-slate-200/80">
                     <a href="<?= url('servicos/auditoria.php') ?>" class="absolute inset-0 z-10 rounded-2xl hidden md:block" aria-hidden="true"></a>
                     <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary to-primary-light mb-6"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                     <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Auditoria Contábil</h3>
@@ -104,7 +101,7 @@ $blogPosts = blogGetRecent(3);
                     </ul>
                     <a href="<?= url('servicos/auditoria.php') ?>" class="relative z-20 inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">Saiba mais <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
-                <div class="service-card relative bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                <div class="service-card relative bg-white rounded-2xl p-8 shadow-xl border border-slate-200/80">
                     <a href="<?= url('servicos/rh.php') ?>" class="absolute inset-0 z-10 rounded-2xl hidden md:block" aria-hidden="true"></a>
                     <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-secondary to-secondary-light mb-6"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
                     <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Recursos Humanos (RH)</h3>
@@ -117,7 +114,7 @@ $blogPosts = blogGetRecent(3);
                     </ul>
                     <a href="<?= url('servicos/rh.php') ?>" class="relative z-20 inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group">Saiba mais <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
-                <div class="service-card relative bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50">
+                <div class="service-card relative bg-white rounded-2xl p-8 shadow-xl border border-slate-200/80">
                     <a href="<?= url('servicos/ti.php') ?>" class="absolute inset-0 z-10 rounded-2xl hidden md:block" aria-hidden="true"></a>
                     <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary-light to-secondary mb-6"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
                     <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Tecnologia da Informação (TI)</h3>
@@ -135,7 +132,7 @@ $blogPosts = blogGetRecent(3);
     </section>
 
     <!-- ========== POR QUE 3KAP ========== -->
-    <section class="relative py-24 overflow-hidden">
+    <section class="relative py-28 overflow-hidden">
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
         <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
@@ -150,7 +147,7 @@ $blogPosts = blogGetRecent(3);
                         <li class="flex items-start gap-4"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20"><svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><p class="text-lg text-white/90 pt-2">Tecnologia de ponta e metodologias inovadoras</p></li>
                         <li class="flex items-start gap-4"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20"><svg class="w-6 h-6 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682"/></svg></div><p class="text-lg text-white/90 pt-2">Atendimento próximo e humano</p></li>
                     </ul>
-                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista" target="_blank" class="flex w-full sm:w-auto mt-10 px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all shadow-lg shadow-secondary/25 inline-flex items-center justify-center">Fale com um especialista</a>
+                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%203KAP%20e%20gostaria%20de%20falar%20com%20um%20especialista" target="_blank" class="flex w-full sm:w-auto mt-10 px-8 py-4 rounded-xl font-bold text-primary bg-white hover:bg-slate-50 transition-all shadow-xl inline-flex items-center justify-center">Fale com um especialista</a>
                 </div>
                 <div class="relative"><div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop" class="w-full h-full object-cover" alt="Equipe 3KAP"></div></div>
             </div>
@@ -158,7 +155,7 @@ $blogPosts = blogGetRecent(3);
     </section>
 
     <!-- ========== ACADEMY CTA ========== -->
-    <section id="academy" class="py-24 bg-white">
+    <section id="academy" class="py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-16 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-3xl"></div>
@@ -172,13 +169,13 @@ $blogPosts = blogGetRecent(3);
         </div>
     </section>
 
-    <!-- ========== BLOG ========== -->
-    <section id="blog" class="py-24 bg-slate-50 overflow-hidden">
+    <!-- ========== ARTIGOS ========== -->
+    <section id="artigos" class="py-28 bg-slate-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div class="max-w-2xl">
                     <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">Insights & Conhecimento</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">Conheça nosso <span class="gradient-text">Blog</span></h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">Artigos</h2>
                     <p class="text-lg text-slate-600">Fique por dentro das últimas tendências em Auditoria, Inovação Tecnológica e Gestão de Pessoas com nossos especialistas.</p>
                 </div>
                 <a href="<?= url('blog.php') ?>" class="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors group whitespace-nowrap">Ver todos os artigos <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
