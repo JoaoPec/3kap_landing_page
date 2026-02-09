@@ -33,6 +33,9 @@ require __DIR__ . '/../inc/header.php';
     <!-- ========== CURSOS ========== -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-16">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop" alt="3KAP Academy - Cursos e treinamentos para sua carreira" class="w-full h-64 sm:h-80 object-cover">
+            </div>
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span
                     class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">

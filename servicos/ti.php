@@ -22,6 +22,9 @@ require __DIR__ . '/../inc/header.php';
 
     <section id="servicos-ti" class="py-24 bg-white scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-16">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop" alt="Consultoria em Tecnologia da Informação, LGPD e segurança - 3KAP" class="w-full h-64 sm:h-80 object-cover">
+            </div>
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">Nossos serviços</span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 font-display">Nossos Serviços de <span class="gradient-text">TI</span></h2>
