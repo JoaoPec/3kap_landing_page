@@ -14,27 +14,27 @@ require __DIR__ . '/inc/header.php';
 $blogPosts = blogGetRecent(3);
 ?>
     <!-- ========== HERO ========== -->
-    <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light"></div>
-        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+    <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary-dark">
+        <!-- Imagem de fundo: skyline / cidade -->
+        <div class="absolute inset-0 z-0">
+            <img src="<?= asset('assets/img/hero-cidade.jpg') ?>" alt="" class="w-full h-full object-cover" role="presentation">
+        </div>
+        <!-- Película escura por cima da imagem -->
+        <div class="absolute inset-0 z-[1] bg-black/65" aria-hidden="true"></div>
+        <!-- Conteúdo -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
-                    Liderança em <span class="text-secondary-light">Auditoria</span>, TI e RH
+                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-8 font-display animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
+                    <span class="block">Audite.</span>
+                    <span class="block">Transforme.</span>
+                    <span class="block text-secondary-light">Confie.</span>
                 </h1>
                 <p class="text-lg md:text-xl text-white/90 mb-10 max-w-xl animate-fade-up animation-delay-100 opacity-0" style="animation-fill-mode: forwards;">
-                    Confiança e resultados para o seu negócio. Atendimento em todo o Brasil.
+                    Liderança em auditoria, TI e RH. Confiança e resultados para o seu negócio em todo o Brasil.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-200 opacity-0" style="animation-fill-mode: forwards;">
-                    <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-primary bg-white hover:bg-slate-50 transition-all hover:-translate-y-0.5 shadow-xl group">Conheça Nossos Serviços <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-                    <a href="#sobre" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold border-2 border-white/80 text-white hover:bg-white/10 transition-all">Sobre a 3KAP</a>
-                </div>
-            </div>
-            <div class="hidden lg:block flex-shrink-0 w-full lg:max-w-md xl:max-w-lg animate-fade-up animation-delay-150 opacity-0" style="animation-fill-mode: forwards;">
-                <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 ring-2 ring-white/10">
-                    <img src="<?= asset('assets/img/hero-consultoria.jpg') ?>" alt="Consultoria e auditoria - equipe 3KAP em ambiente moderno" class="w-full h-full object-cover aspect-[4/3]">
+                    <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-white bg-primary hover:bg-primary-dark transition-all hover:-translate-y-0.5 shadow-xl group">Conheça Nossos Serviços <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-primary bg-white hover:bg-slate-100 transition-all shadow-xl">Fale Conosco</a>
                 </div>
             </div>
         </div>
