@@ -52,9 +52,22 @@ function blogCreate(array $data): int {
     $slug = $data['slug'] ?? slugify($data['title']);
     $i = 0;
     while (blogSlugExists($slug)) $slug = slugify($data['title']) . '-' . (++$i);
+    $authorId = isset($data['author_id']) && $data['author_id'] !== '' ? (int)$data['author_id'] : null;
+    if ($authorId <= 0) $authorId = null;
     $stmt = $pdo->prepare("
-        INSERT INTO blog_posts (title, slug, excerpt, content, category, image_url, video_url, published, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+        INSERT INTO blog_posts (
+            title,
+            slug,
+            excerpt,
+            content,
+            category,
+            image_url,
+            video_url,
+            author_id,
+            published,
+            updated_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     ");
     $stmt->execute([
         $data['title'],
@@ -64,6 +77,7 @@ function blogCreate(array $data): int {
         $data['category'] ?? 'geral',
         $data['image_url'] ?? null,
         !empty($data['video_url']) ? trim($data['video_url']) : null,
+        $authorId,
         isset($data['published']) ? (int)(bool)$data['published'] : 1,
     ]);
     return (int) $pdo->lastInsertId();
@@ -77,8 +91,22 @@ function blogUpdate(int $id, array $data): bool {
     $i = 0;
     while (blogSlugExists($slug, $id)) $slug = slugify($title) . '-' . (++$i);
     $pdo = getDb();
+    $authorId = isset($data['author_id']) && $data['author_id'] !== '' ? (int)$data['author_id'] : null;
+    if ($authorId <= 0) $authorId = null;
     $stmt = $pdo->prepare("
-        UPDATE blog_posts SET title = ?, slug = ?, excerpt = ?, content = ?, category = ?, image_url = ?, video_url = ?, published = ?, updated_at = datetime('now') WHERE id = ?
+        UPDATE blog_posts
+        SET
+            title = ?,
+            slug = ?,
+            excerpt = ?,
+            content = ?,
+            category = ?,
+            image_url = ?,
+            video_url = ?,
+            author_id = ?,
+            published = ?,
+            updated_at = datetime('now')
+        WHERE id = ?
     ");
     return $stmt->execute([
         $title,
@@ -88,6 +116,7 @@ function blogUpdate(int $id, array $data): bool {
         $data['category'] ?? $old['category'],
         $data['image_url'] ?? $old['image_url'],
         array_key_exists('video_url', $data) ? (!empty($data['video_url']) ? trim($data['video_url']) : null) : ($old['video_url'] ?? null),
+        $authorId,
         isset($data['published']) ? (int)(bool)$data['published'] : (int)$old['published'],
         $id,
     ]);
@@ -114,4 +143,63 @@ function blogGetCategories(bool $publishedOnly = false): array {
     $sql .= " ORDER BY category";
     $stmt = $pdo->query($sql);
     return array_column($stmt->fetchAll(), 'category');
+}
+
+// ---------- Autores ----------
+
+function authorGetAll(): array {
+    $pdo = getDb();
+    $stmt = $pdo->query("SELECT * FROM blog_authors ORDER BY name");
+    return $stmt->fetchAll();
+}
+
+function authorGetById(?int $id): ?array {
+    if ($id === null || $id <= 0) return null;
+    $pdo = getDb();
+    $stmt = $pdo->prepare("SELECT * FROM blog_authors WHERE id = ? LIMIT 1");
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    return $row ?: null;
+}
+
+function authorCreate(array $data): int {
+    $pdo = getDb();
+    $stmt = $pdo->prepare("
+        INSERT INTO blog_authors (name, photo_url, mini_bio, linkedin_url, whatsapp_number, updated_at)
+        VALUES (?, ?, ?, ?, ?, datetime('now'))
+    ");
+    $stmt->execute([
+        trim($data['name'] ?? ''),
+        trim($data['photo_url'] ?? '') ?: null,
+        trim($data['mini_bio'] ?? '') ?: null,
+        trim($data['linkedin_url'] ?? '') ?: null,
+        trim($data['whatsapp_number'] ?? '') ?: null,
+    ]);
+    return (int) $pdo->lastInsertId();
+}
+
+function authorUpdate(int $id, array $data): bool {
+    $old = authorGetById($id);
+    if (!$old) return false;
+    $pdo = getDb();
+    $stmt = $pdo->prepare("
+        UPDATE blog_authors
+        SET name = ?, photo_url = ?, mini_bio = ?, linkedin_url = ?, whatsapp_number = ?, updated_at = datetime('now')
+        WHERE id = ?
+    ");
+    return $stmt->execute([
+        trim($data['name'] ?? $old['name']),
+        trim($data['photo_url'] ?? $old['photo_url'] ?? '') ?: null,
+        trim($data['mini_bio'] ?? $old['mini_bio'] ?? '') ?: null,
+        trim($data['linkedin_url'] ?? $old['linkedin_url'] ?? '') ?: null,
+        trim($data['whatsapp_number'] ?? $old['whatsapp_number'] ?? '') ?: null,
+        $id,
+    ]);
+}
+
+function authorDelete(int $id): bool {
+    $pdo = getDb();
+    $pdo->prepare("UPDATE blog_posts SET author_id = NULL WHERE author_id = ?")->execute([$id]);
+    $stmt = $pdo->prepare("DELETE FROM blog_authors WHERE id = ?");
+    return $stmt->execute([$id]);
 }

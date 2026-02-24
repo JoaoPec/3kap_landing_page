@@ -47,6 +47,7 @@ $data = [
     'category' => $category,
     'image_url' => $imageUrl,
     'video_url' => $videoUrl,
+    'author_id' => isset($_POST['author_id']) && $_POST['author_id'] !== '' ? (int)$_POST['author_id'] : null,
     'published' => isset($_POST['published']),
 ];
 

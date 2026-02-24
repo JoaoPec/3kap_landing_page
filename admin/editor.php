@@ -16,6 +16,9 @@ $pageTitle = $isEdit ? 'Editar post' : 'Novo post';
 $fixedCategories = ['geral', 'Auditoria', 'TI', 'RH', 'Compliance'];
 $postCategory = $post['category'] ?? 'geral';
 $isCustomCategory = !in_array($postCategory, $fixedCategories, true);
+$authors = authorGetAll();
+$postAuthorId = isset($post['author_id']) && $post['author_id'] !== '' ? (int)$post['author_id'] : null;
+if ($postAuthorId <= 0) $postAuthorId = null;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -113,6 +116,19 @@ $isCustomCategory = !in_array($postCategory, $fixedCategories, true);
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition"
                         placeholder="https://www.youtube.com/watch?v=... ou https://youtu.be/...">
                     <p class="mt-1 text-xs text-slate-500">Cole o link do vídeo do YouTube. O player será exibido no artigo.</p>
+                </div>
+                <div class="border-t border-slate-100 pt-6 mt-4">
+                    <label for="author_id" class="block text-sm font-medium text-slate-700 mb-2">Autor do artigo</label>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <select name="author_id" id="author_id" class="px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition min-w-[200px]">
+                            <option value="">— Sem autor —</option>
+                            <?php foreach ($authors as $a): ?>
+                            <option value="<?= (int)$a['id'] ?>" <?= $postAuthorId === (int)$a['id'] ? 'selected' : '' ?>><?= htmlspecialchars($a['name']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <a href="<?= adminUrl('authors.php') ?>" class="text-sm font-medium text-secondary hover:text-secondary/80">Gerenciar autores</a>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-500">O autor escolhido aparece no artigo com foto, mini currículo e links para LinkedIn e WhatsApp. Cadastre autores em <strong>Autores</strong>.</p>
                 </div>
                 <div>
                     <label for="content" class="block text-sm font-medium text-slate-700 mb-2">Conteúdo (HTML permitido) *</label>

@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-white/10 text-center">
-                <p class="text-xs text-white/40">© <?= date('Y') ?> 3KAP Auditoria | CNPJ: 42.481.165/0001-72. Todos os direitos reservados.</p>
+                <p class="text-xs text-white/40">© <?= date('Y') ?> 3KAP Auditoria | CNPJ: 50.249.545/0001-04. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

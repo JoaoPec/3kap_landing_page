@@ -2,11 +2,11 @@
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/lib/blog.php';
 
-$pageTitle = '3KAP - Auditoria | Contábil, RH e TI';
-$pageDescription = 'Auditoria contábil independente, consultoria em RH e TI. Atendimento em todo o Brasil. Soluções para empresas. 3KAP.';
-$pageKeywords = 'auditoria contábil, auditoria independente, consultoria RH, consultoria TI, 3KAP';
+$pageTitle = '3KAP - Auditoria | TI | RH';
+$pageDescription = 'Auditoria, Tecnologia e Recursos Humanos atuando de forma integrada para fortalecer a governança da sua organização. 3KAP.';
+$pageKeywords = 'auditoria, TI, recursos humanos, governança, conformidade, 3KAP, Salvador, Bahia, Brasil, Auditoria em Salvador, Auditoria em Bahia, Auditoria em Brasil';
 $extraHead = '<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"3KAP","description":"Auditoria contábil independente, consultoria em RH e TI. Atendimento em todo o Brasil.","url":"https://3kap.com.br","telephone":"+5571999153592","address":{"@type":"PostalAddress","streetAddress":"Av. Prof. Magalhães Neto, 1550 - 7º Andar","addressLocality":"Salvador","addressRegion":"BA","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"priceRange":"$$"}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"3KAP","description":"Auditoria, Tecnologia e Recursos Humanos atuando de forma integrada para fortalecer a governança da sua organização. Atendimento em todo o Brasil.","url":"https://3kap.com.br","telephone":"+5571999153592","address":{"@type":"PostalAddress","streetAddress":"Av. Prof. Magalhães Neto, 1550 - 7º Andar","addressLocality":"Salvador","addressRegion":"BA","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"priceRange":"$$"}
 </script>';
 require __DIR__ . '/inc/head.php';
 require __DIR__ . '/inc/header.php';
@@ -24,15 +24,16 @@ $blogPosts = blogGetRecent(3);
         <!-- Conteúdo -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-8 font-display animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
-                    <span class="block">Audite.</span>
-                    <span class="block">Transforme.</span>
-                    <span class="block text-secondary-light">Confie.</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] mb-4 font-display animate-fade-up opacity-0" style="animation-fill-mode: forwards;">
+                    <span class="block">3<span class="text-secondary-light">KAP</span></span>
                 </h1>
-                <p class="text-lg md:text-xl text-white/90 mb-10 max-w-xl animate-fade-up animation-delay-100 opacity-0" style="animation-fill-mode: forwards;">
-                    Liderança em auditoria, TI e RH. Confiança e resultados para o seu negócio em todo o Brasil.
+                <p class="text-xl md:text-2xl lg:text-3xl text-white/95 font-semibold mb-6 animate-fade-up animation-delay-100 opacity-0" style="animation-fill-mode: forwards;">
+                    Auditoria <span class="text-secondary-light">|</span> TI <span class="text-secondary-light">|</span> RH
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-200 opacity-0" style="animation-fill-mode: forwards;">
+                <p class="text-lg md:text-xl text-white/90 mb-10 max-w-xl animate-fade-up animation-delay-200 opacity-0" style="animation-fill-mode: forwards;">
+                    Auditoria, Tecnologia e Recursos Humanos atuando de forma integrada para fortalecer a governança da sua organização.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-300 opacity-0" style="animation-fill-mode: forwards;">
                     <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-white bg-primary hover:bg-primary-dark transition-all hover:-translate-y-0.5 shadow-xl group">Conheça Nossos Serviços <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                     <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-primary bg-white hover:bg-slate-100 transition-all shadow-xl">Fale Conosco</a>
                 </div>
@@ -40,29 +41,35 @@ $blogPosts = blogGetRecent(3);
         </div>
     </section>
 
-    <!-- ========== SOBRE ========== -->
-    <section id="sobre" class="py-28 bg-white scroll-mt-24">
+    <!-- ========== QUEM SOMOS ========== -->
+    <section id="sobre" class="py-20 md:py-24 bg-white scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">Sobre Nós</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-display">Conheça a <span class="gradient-text">3KAP</span></h2>
-                <p class="text-lg text-slate-600">A 3KAP é uma empresa de <strong>auditoria</strong>, com soluções integradas de melhores práticas de gestão. Desenvolvemos auditoria contábil, consultoria empresarial e tributária, com utilização de ferramentas tecnológicas. Nossa metodologia é baseada nas melhores práticas internacionais de auditoria contábil. Atendimento em todo o Brasil.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 font-display">Quem <span class="gradient-text">somos</span></h2>
+                <p class="text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">A 3KAP é especializada em <strong class="text-slate-800 font-semibold">Auditoria</strong>, Tecnologia e Recursos Humanos, com soluções integradas para governança, conformidade e gestão. Atuamos em auditoria independente, consultoria empresarial e tributária e em tecnologia aplicada à gestão, com base nas Normas Brasileiras de Contabilidade e nas melhores práticas internacionais. Nossa metodologia combina rigor técnico, análise estratégica e ferramentas tecnológicas, trazendo controle, transparência e segurança. Com sede em Salvador e atuação em todo o Brasil, atendemos organizações que buscam estrutura sólida, eficiência e crescimento sustentável.</p>
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-20 max-w-4xl mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 max-w-4xl mx-auto">
                 <img src="<?= asset('assets/img/sobre-equipe.jpg') ?>" alt="Equipe de profissionais em reunião - 3KAP" class="w-full h-64 sm:h-80 object-cover">
             </div>
-            <div class="mt-20 mb-16">
-                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">Liderança</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8 font-display"><span class="gradient-text">Fundador</span></h3>
-                <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start bg-slate-50 rounded-2xl p-8 md:p-10 border border-slate-100">
-                    <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg mx-auto md:mx-0">
-                        <img src="<?= asset('assets/img/tiago_falcao.jpg') ?>" alt="Tiago Falcão - Diretor e fundador da 3KAP" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- ========== FUNDADOR ========== -->
+    <section id="fundador" class="py-20 md:py-24 bg-slate-50 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">Liderança</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8 font-display"><span class="gradient-text">Fundador</span></h3>
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start bg-white rounded-2xl p-8 md:p-10 border border-slate-200 shadow-sm">
+                    <div class="flex-shrink-0 w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden shadow-lg mx-auto md:mx-0">
+                        <img src="<?= asset('assets/img/Tiagofoto1.png') ?>" alt="Tiago Falcão - Diretor e fundador da 3KAP" class="w-full h-full object-cover object-top">
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-xl font-bold text-slate-800 font-display">Tiago Falcão</p>
                         <p class="text-primary font-semibold mb-4">Diretor · Líder de Auditoria</p>
-                        <p class="text-slate-600 mb-4">Contador com pós-graduação em Controladoria e mais de 10 anos de experiência em finanças e auditoria. Atuou em empresas de grande porte como encarregado de auditoria externa, analista contábil, fiscal e planejamento financeiro.</p>
-                        <p class="text-slate-600 mb-4">Trajetória em duas das Big Four e em indústrias de grande porte. Fundou a 3KAP em 2020 para levar auditoria de excelência e consultoria integrada com foco em resultados e proximidade com o cliente.</p>
+                        <p class="text-slate-600 mb-4">Contador com pós-graduação em Controladoria e mais de 20 anos de experiência em finanças e auditoria independente. Atuou em empresas de grande porte como encarregado de auditoria externa, além de exercer funções nas áreas contábil, fiscal e de planejamento financeiro.</p>
+                        <p class="text-slate-600 mb-4">Possui trajetória profissional em Big Four e em indústrias de grande porte, consolidando sólida experiência técnica, visão estratégica e rigor metodológico na condução de trabalhos complexos.</p>
+                        <p class="text-slate-600 mb-4">Fundou a 3KAP com o propósito de oferecer auditoria com elevado padrão técnico, aliada a consultoria integrada, atendimento próximo e foco em resultados consistentes para organizações que buscam governança, conformidade e crescimento estruturado.</p>
                         <ul class="text-slate-500 text-sm space-y-1 mb-6">
                             <li><strong class="text-slate-600">Formação:</strong> Ciências Contábeis (UFBA), Pós-graduação em Controladoria (Saint Paul)</li>
                         </ul>
@@ -72,29 +79,6 @@ $blogPosts = blogGetRecent(3);
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="mt-16 grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
-                    <div class="aspect-video overflow-hidden">
-                        <img src="<?= asset('assets/img/card-qualidade.jpg') ?>" alt="Equipe qualificada 3KAP - qualidade em auditoria e consultoria" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="inline-flex p-3 rounded-xl bg-primary/10 mb-4"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Qualidade Única</h3>
-                        <p class="text-slate-600">Contamos com uma equipe profissional para te entregar os melhores serviços.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
-                    <div class="aspect-video overflow-hidden">
-                        <img src="<?= asset('assets/img/card-suporte.jpg') ?>" alt="Suporte e atendimento próximo 3KAP" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="inline-flex p-3 rounded-xl bg-primary/10 mb-4"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 font-display">Suporte Otimizado</h3>
-                        <p class="text-slate-600">Qualquer problema que você venha a ter, estaremos aqui para solucionar.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -145,7 +129,7 @@ $blogPosts = blogGetRecent(3);
                 <div class="service-card relative bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200/80">
                     <a href="<?= url('servicos/ti.php') ?>" class="absolute inset-0 z-10 rounded-2xl hidden md:block" aria-hidden="true"></a>
                     <div class="aspect-[16/10] overflow-hidden">
-                        <img src="<?= asset('assets/img/servico-ti.jpg') ?>" alt="Tecnologia da Informação, LGPD e consultoria em TI - 3KAP" class="w-full h-full object-cover">
+                        <img src="<?= asset('assets/img/hero-consultoria.jpg') ?>" alt="Equipe em reunião com notebooks e soluções de TI - 3KAP" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                     <div class="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary-light to-secondary mb-4"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
@@ -199,7 +183,7 @@ $blogPosts = blogGetRecent(3);
                     <a href="<?= url('servicos/cursos.php') ?>" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-primary bg-white hover:bg-slate-100 transition-all hover:-translate-y-0.5 shadow-lg group">Ver todos os cursos <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
                 <div class="relative z-10 lg:w-1/2 order-1 lg:order-2">
-                    <div class="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[280px] lg:min-h-0">
+                    <div class="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[280px] lg:min-h-0 rounded-2xl overflow-hidden">
                         <img src="<?= asset('assets/img/academy.jpg') ?>" alt="3KAP Academy - Cursos e treinamentos para sua carreira" class="w-full h-full object-cover opacity-95">
                     </div>
                 </div>
@@ -242,5 +226,5 @@ $blogPosts = blogGetRecent(3);
         </div>
     </section>
 
-<?php require __DIR__ . '/inc/mapa.php'; ?>
+    <?php require __DIR__ . '/inc/mapa.php'; ?>
 <?php require __DIR__ . '/inc/footer.php'; ?>

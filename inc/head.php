@@ -24,7 +24,7 @@ $canonicalUrl = 'https://3kap.com.br/' . ($pageCanonical === false ? '' : ($page
     <meta property="og:description" content="<?= htmlspecialchars($pageDescription) ?>">
     <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>">
     <meta property="og:site_name" content="3KAP">
-    <link rel="icon" href="<?= asset('favicon.svg') ?>" type="image/svg+xml">
+    <link rel="icon" href="<?= asset('assets/img/faviconV2.png') ?>" type="image/png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
