@@ -31,9 +31,9 @@ require __DIR__ . '/../inc/header.php';
     </section>
 
     <!-- ========== CURSOS ========== -->
-    <section class="py-24 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-16 bg-black">
+            <div class="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-10 bg-black">
                 <div class="aspect-video">
                     <iframe title="Apresentação 3KAP Academy" src="https://player.vimeo.com/video/950880547?h=be4f9edbc3"
                         class="w-full h-full" frameborder="0"
@@ -72,8 +72,8 @@ require __DIR__ . '/../inc/header.php';
                             CPC 27, CPC 31, CPC 47 e atualizações.
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível nos planos: <span class="font-semibold">Sênior, Gestor e Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#ifrs-cpc" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20trilha%20IFRS%20%2F%20CPC%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Ver detalhes na 3KAP Academy
                         </a>
                     </div>
@@ -94,8 +94,8 @@ require __DIR__ . '/../inc/header.php';
                             relações, fórmulas DAX, criação de relatórios e dashboards, além de modelos criativos.
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível nos planos: <span class="font-semibold">Sênior, Gestor e Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#power-bi" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Quero%20informações%20sobre%20a%20trilha%20de%20Power%20BI%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Ver trilha de Power BI
                         </a>
                     </div>
@@ -116,8 +116,8 @@ require __DIR__ . '/../inc/header.php';
                             para o dia a dia.
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível nos planos: <span class="font-semibold">Sênior, Gestor e Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#excel" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-primary hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20trilha%20de%20Excel%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Ver conteúdos de Excel
                         </a>
                     </div>
@@ -138,8 +138,8 @@ require __DIR__ . '/../inc/header.php';
                             330, 450, 500, 501, 505, 510, 520, 530, 540, 550, 560, 570, 580, 610, 620, 701, 705, 706).
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível nos planos: <span class="font-semibold">Sênior, Gestor e Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#isa-nbc" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-primary to-slate-700 hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Tenho%20interesse%20na%20trilha%20ISA%20%2F%20NBC%20TA%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Ver normas de auditoria
                         </a>
                     </div>
@@ -159,8 +159,8 @@ require __DIR__ . '/../inc/header.php';
                             Diagrama de Ishikawa, diagnóstico empresarial, PDCA, POP, metas S.M.A.R.T, gráficos de tendência e outras ferramentas.
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível nos planos: <span class="font-semibold">Gestor e Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#ferramentas-excel" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-orange-400 to-secondary hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Quero%20saber%20mais%20sobre%20as%20ferramentas%20de%20gest%C3%A3o%20em%20Excel%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Ver ferramentas em Excel
                         </a>
                     </div>
@@ -181,8 +181,8 @@ require __DIR__ . '/../inc/header.php';
                             às necessidades da sua equipe.
                         </p>
                         <p class="text-xs text-slate-500 mb-4">Disponível apenas no plano: <span class="font-semibold">Corporativo</span>.</p>
-                        <a href="https://www.3kap.com.br/treinamentos#plano-instrucional" target="_blank"
-                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-slate-700 to-primary-dark hover:opacity-90 transition-all">
+                        <a href="https://wa.me/5571999153592?text=Ol%C3%A1%2C%20Thiago%21%20Gostaria%20de%20conversar%20sobre%20o%20plano%20corporativo%20e%20o%20plano%20instrucional%20de%20desenvolvimento%20da%203KAP%20Academy." target="_blank"
+                            class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-secondary hover:bg-secondary-dark transition-all">
                             Falar sobre plano corporativo
                         </a>
                     </div>
@@ -191,7 +191,8 @@ require __DIR__ . '/../inc/header.php';
         </div>
     </section>
 
-    <!-- ========== PLANOS ========== -->
+    <!-- ========== PLANOS (COMENTADO A PEDIDO) ========== -->
+    <!--
     <section class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
@@ -210,61 +211,7 @@ require __DIR__ . '/../inc/header.php';
             <div class="grid md:grid-cols-3 gap-8 mb-10">
                 <!-- Plano Sênior -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-800 mb-1 font-display">Plano Sênior</h3>
-                    <p class="text-sm text-slate-500 mb-4">Assinatura anual</p>
-                    <p class="text-3xl font-bold text-primary mb-6">R$ 197,00</p>
-                    <ul class="space-y-2 text-sm text-slate-600 flex-1">
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Curso de Excel Essencial / Excel 80/20</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Power BI Essencial / Power 80/20</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> IFRS / CPC – principais pronunciamentos</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> ISA / NBC TA – normas de auditoria</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Atualizações semanais com novos conteúdos</li>
-                        <li class="flex items-start gap-2 text-slate-400"><span class="mt-1">✖</span> Ferramentas de gestão em Excel</li>
-                        <li class="flex items-start gap-2 text-slate-400"><span class="mt-1">✖</span> Plano instrucional de desenvolvimento</li>
-                    </ul>
-                    <a href="https://www.3kap.com.br/treinamentos#planos" target="_blank"
-                        class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-all">
-                        Assinar Plano Sênior
-                    </a>
-                </div>
-
-                <!-- Plano Gestor -->
-                <div class="bg-white rounded-2xl border-2 border-secondary shadow-md p-8 flex flex-col relative">
-                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-secondary text-white text-xs font-semibold shadow-sm">
-                        Mais escolhido
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-1 font-display">Plano Gestor</h3>
-                    <p class="text-sm text-slate-500 mb-4">Assinatura anual</p>
-                    <p class="text-3xl font-bold text-secondary mb-6">R$ 297,00</p>
-                    <ul class="space-y-2 text-sm text-slate-600 flex-1">
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Tudo do Plano Sênior</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Ferramentas de gestão em Excel (Ishikawa, PDCA, Diagnóstico, S.M.A.R.T, gráficos de tendência etc.)</li>
-                        <li class="flex items-start gap-2 text-slate-400"><span class="mt-1">✖</span> Plano instrucional de desenvolvimento</li>
-                    </ul>
-                    <a href="https://www.3kap.com.br/treinamentos#planos" target="_blank"
-                        class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-secondary to-secondary-light hover:opacity-90 transition-all">
-                        Assinar Plano Gestor
-                    </a>
-                </div>
-
-                <!-- Plano Corporativo -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-800 mb-1 font-display">Plano Corporativo</h3>
-                    <p class="text-sm text-slate-500 mb-4">Assinatura anual</p>
-                    <p class="text-3xl font-bold text-slate-800 mb-2">A consultar</p>
-                    <p class="text-sm text-slate-500 mb-6">Ideal para empresas que querem desenvolver times inteiros.</p>
-                    <ul class="space-y-2 text-sm text-slate-600 flex-1">
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Tudo do Plano Gestor</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Plano instrucional de desenvolvimento</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Avaliação de perfil dos colaboradores</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Plano de ação de desenvolvimento personalizado</li>
-                        <li class="flex items-start gap-2"><span class="mt-1 text-emerald-500">✔</span> Estudos de casos práticos e trilhas sob medida</li>
-                    </ul>
-                    <a href="https://wa.me/5571999153592?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Corporativo%20da%203KAP%20Academy"
-                        target="_blank"
-                        class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-primary bg-slate-100 hover:bg-slate-200 transition-all">
-                        Falar com o time comercial
-                    </a>
+                    ...
                 </div>
             </div>
 
@@ -274,6 +221,7 @@ require __DIR__ . '/../inc/header.php';
             </p>
         </div>
     </section>
+    -->
 
     <!-- ========== FOOTER ========== -->
 <?php require __DIR__ . '/../inc/footer.php'; ?>
