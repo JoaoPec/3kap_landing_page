@@ -34,13 +34,7 @@ require __DIR__ . '/../inc/header.php';
                         <p class="text-xl font-bold text-slate-800 font-display">Tiago Falcão</p>
                         <p class="text-primary font-semibold mb-4">Diretor · Líder de Auditoria</p>
                         <p class="text-slate-600 mb-4">Contador com pós-graduação em controladoria e mais de 20 anos de experiência em auditoria independente e finanças. Atuou em Big Four, realizando auditorias em diversos segmentos e conduzindo trabalhos relevantes em empresas de grande porte.</p>
-                        <div id="tiago-mais" class="hidden">
-                            <p class="text-slate-600 mb-6">Fundador da 3KAP, lidera projetos de auditoria e consultoria com alto padrão técnico, foco em governança, segurança das informações e geração de resultados consistentes para as organizações.</p>
-                        </div>
-                        <button type="button" id="tiago-ler-mais" class="text-secondary font-semibold text-sm hover:underline mb-4 focus:outline-none" aria-expanded="false">Ler mais</button>
-                        <div id="tiago-menos-wrap" class="hidden">
-                            <button type="button" id="tiago-ler-menos" class="text-secondary font-semibold text-sm hover:underline mb-4 focus:outline-none">Ler menos</button>
-                        </div>
+                        <p class="text-slate-600 mb-6">Fundador da 3KAP, lidera projetos de auditoria e consultoria com alto padrão técnico, foco em governança, segurança das informações e geração de resultados consistentes para as organizações.</p>
                         <a href="https://www.linkedin.com/in/tiago-falcão" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0A66C2] text-white text-sm font-semibold hover:bg-[#004182] transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                             Ver perfil no LinkedIn
@@ -135,7 +129,7 @@ require __DIR__ . '/../inc/header.php';
                     Auditoria de Contratos e Convênios
                 </a>
                 <a href="#fins-especificos" class="flex items-center gap-3 p-5 rounded-xl bg-white border-2 border-slate-200 shadow-sm hover:border-secondary/40 hover:bg-secondary/5 transition-all text-left font-medium text-slate-800">
-                    <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary to_secondary flex items-center justify-center">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </span>
                     Auditoria para Fins Específicos
@@ -243,26 +237,4 @@ require __DIR__ . '/../inc/header.php';
             </div>
         </div>
     </section>
-    <script>
-    (function() {
-        var btnMais = document.getElementById('tiago-ler-mais');
-        var btnMenos = document.getElementById('tiago-ler-menos');
-        var blocMais = document.getElementById('tiago-mais');
-        var wrapMenos = document.getElementById('tiago-menos-wrap');
-        if (btnMais && blocMais) {
-            btnMais.addEventListener('click', function() {
-                blocMais.classList.remove('hidden');
-                btnMais.classList.add('hidden');
-                if (wrapMenos) wrapMenos.classList.remove('hidden');
-            });
-        }
-        if (btnMenos && blocMais) {
-            btnMenos.addEventListener('click', function() {
-                blocMais.classList.add('hidden');
-                if (btnMais) btnMais.classList.remove('hidden');
-                if (wrapMenos) wrapMenos.classList.add('hidden');
-            });
-        }
-    })();
-    </script>
 <?php require __DIR__ . '/../inc/footer.php'; ?>
