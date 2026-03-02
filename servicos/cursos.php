@@ -59,7 +59,7 @@ require __DIR__ . '/../inc/header.php';
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Trilha IFRS / CPC -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 4H9m0 4h3m8 2a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v9z"/>
                         </svg>
@@ -81,7 +81,7 @@ require __DIR__ . '/../inc/header.php';
 
                 <!-- Trilha Power BI -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5h4v14H4zM10 9h4v10h-4zM16 3h4v16h-4z"/>
                         </svg>
@@ -103,7 +103,7 @@ require __DIR__ . '/../inc/header.php';
 
                 <!-- Trilha Excel -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-emerald-500 to-primary flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h16v16H4zM4 9h16M9 4v16"/>
                         </svg>
@@ -125,7 +125,7 @@ require __DIR__ . '/../inc/header.php';
 
                 <!-- Trilha ISA / NBC TA -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-primary to-slate-700 flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-6-6h12M5 4h14v16H5z"/>
                         </svg>
@@ -147,7 +147,7 @@ require __DIR__ . '/../inc/header.php';
 
                 <!-- Ferramentas de Gestão em Excel -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-orange-400 to-secondary flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6m-6-4h6m-9 8h12M5 7h.01M5 11h.01M5 15h.01"/>
                         </svg>
@@ -168,7 +168,7 @@ require __DIR__ . '/../inc/header.php';
 
                 <!-- Plano Instrucional de Desenvolvimento -->
                 <div class="course-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-                    <div class="h-40 bg-gradient-to-br from-slate-700 to-primary-dark flex items-center justify-center">
+                    <div class="h-40 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                         <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v8m0 0l-3-3m3 3l3-3M5 4h14v4H5zM5 20h14v-4H5z"/>
                         </svg>

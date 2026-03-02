@@ -9,10 +9,9 @@ $isCursos = (strpos($script, 'cursos') !== false);
     <!-- ========== HEADER ========== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
                 <a href="<?= url('index.php') ?>" class="flex items-center gap-2">
-                    <span class="text-3xl font-bold font-display text-primary">3<span class="gradient-text">kap</span></span>
-                    <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">Group</span>
+                    <img src="<?= asset('assets/img/logo_3kap.PNG') ?>" alt="3KAP - Auditoria, RH e TI" class="h-24 w-auto object-contain flex-shrink-0">
                 </a>
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="<?= url('index.php') ?>" class="relative text-sm font-medium <?= (strpos($script, 'index') !== false && strpos($script, 'servicos') === false ? 'text-primary' : 'text-slate-600 hover:text-primary') ?> transition-colors nav-link">Home</a>
