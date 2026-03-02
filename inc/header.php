@@ -11,7 +11,7 @@ $isCursos = (strpos($script, 'cursos') !== false);
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
                 <a href="<?= url('index.php') ?>" class="flex items-center gap-2">
-                    <img src="<?= asset('assets/img/logo_3kap.PNG') ?>" alt="3KAP - Auditoria, RH e TI" class="h-24 w-auto object-contain flex-shrink-0">
+                    <img src="<?= asset('assets/img/logo_3kap.png') ?>" alt="3KAP - Auditoria, RH e TI" class="h-24 w-auto object-contain flex-shrink-0">
                 </a>
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="<?= url('index.php') ?>" class="relative text-sm font-medium <?= (strpos($script, 'index') !== false && strpos($script, 'servicos') === false ? 'text-primary' : 'text-slate-600 hover:text-primary') ?> transition-colors nav-link">Home</a>
