@@ -65,7 +65,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">IFRS / CPC</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Normas Internacionais de Contabilidade</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Trilhas com CPC 00, CPC 01, CPC 03, CPC 04, CPC 05, CPC 06, CPC 07, CPC 16, CPC 20, CPC 23, CPC 24, CPC 25,
@@ -87,7 +86,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase mb-3">Power BI</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Power BI Essencial / Power 80/20</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Módulos do básico ao avançado: funcionamento do Power BI, importação e tratamento de dados,
@@ -109,7 +107,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold uppercase mb-3">Excel</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Excel Essencial / Excel 80/20</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Fundamentos de Excel mais usados na contabilidade e finanças, com foco em produtividade prática
@@ -131,7 +128,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase mb-3">ISA / NBC TA</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Normas Técnicas de Auditoria</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Estrutura Conceitual e principais NBC TAs (200, 210, 220, 230, 240, 250, 260, 265, 300, 315, 320,
@@ -153,7 +149,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold uppercase mb-3">Ferramentas</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Ferramentas de Gestão em Excel</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Diagrama de Ishikawa, diagnóstico empresarial, PDCA, POP, metas S.M.A.R.T, gráficos de tendência e outras ferramentas.
@@ -174,7 +169,6 @@ require __DIR__ . '/../inc/header.php';
                         </svg>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block px-3 py-1 bg-slate-200 text-slate-800 rounded-full text-xs font-bold uppercase mb-3">Desenvolvimento</span>
                         <h3 class="text-xl font-bold text-slate-800 mb-3 font-display">Plano Instrucional de Desenvolvimento</h3>
                         <p class="text-slate-600 text-sm mb-4 flex-1">
                             Avaliação de perfil, plano de ação personalizado, estudo de casos práticos e trilhas alinhadas
