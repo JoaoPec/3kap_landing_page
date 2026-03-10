@@ -61,13 +61,14 @@ function blogCreate(array $data): int {
             excerpt,
             content,
             category,
+            keywords,
             image_url,
             video_url,
             author_id,
             published,
             updated_at
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
     ");
     $stmt->execute([
         $data['title'],
@@ -75,6 +76,7 @@ function blogCreate(array $data): int {
         $data['excerpt'] ?? '',
         $data['content'] ?? '',
         $data['category'] ?? 'geral',
+        isset($data['keywords']) ? trim($data['keywords']) : null,
         $data['image_url'] ?? null,
         !empty($data['video_url']) ? trim($data['video_url']) : null,
         $authorId,
@@ -101,6 +103,7 @@ function blogUpdate(int $id, array $data): bool {
             excerpt = ?,
             content = ?,
             category = ?,
+            keywords = ?,
             image_url = ?,
             video_url = ?,
             author_id = ?,
@@ -114,6 +117,7 @@ function blogUpdate(int $id, array $data): bool {
         $data['excerpt'] ?? $old['excerpt'],
         $data['content'] ?? $old['content'],
         $data['category'] ?? $old['category'],
+        array_key_exists('keywords', $data) ? (trim($data['keywords'] ?? '') ?: null) : ($old['keywords'] ?? null),
         $data['image_url'] ?? $old['image_url'],
         array_key_exists('video_url', $data) ? (!empty($data['video_url']) ? trim($data['video_url']) : null) : ($old['video_url'] ?? null),
         $authorId,
@@ -143,6 +147,22 @@ function blogGetCategories(bool $publishedOnly = false): array {
     $sql .= " ORDER BY category";
     $stmt = $pdo->query($sql);
     return array_column($stmt->fetchAll(), 'category');
+}
+
+/** Retorna nomes de categorias da tabela blog_categories (para o editor). */
+function blogGetCategoryNames(): array {
+    $pdo = getDb();
+    $stmt = $pdo->query("SELECT name FROM blog_categories ORDER BY name");
+    return array_column($stmt->fetchAll(), 'name');
+}
+
+/** Garante que a categoria exista na tabela (insere se não existir). */
+function blogEnsureCategory(string $name): void {
+    $name = trim($name);
+    if ($name === '') return;
+    $pdo = getDb();
+    $stmt = $pdo->prepare("INSERT OR IGNORE INTO blog_categories (name) VALUES (?)");
+    $stmt->execute([mb_substr($name, 0, 100)]);
 }
 
 // ---------- Autores ----------

@@ -13,9 +13,9 @@ if ($id && !$post) {
 $isEdit = (bool)$post;
 $pageTitle = $isEdit ? 'Editar post' : 'Novo post';
 
-$fixedCategories = ['geral', 'Auditoria', 'TI', 'RH', 'Compliance'];
+$categoryNames = blogGetCategoryNames();
 $postCategory = $post['category'] ?? 'geral';
-$isCustomCategory = !in_array($postCategory, $fixedCategories, true);
+$isCustomCategory = !in_array($postCategory, $categoryNames, true);
 $authors = authorGetAll();
 $postAuthorId = isset($post['author_id']) && $post['author_id'] !== '' ? (int)$post['author_id'] : null;
 if ($postAuthorId <= 0) $postAuthorId = null;
@@ -79,9 +79,16 @@ if ($postAuthorId <= 0) $postAuthorId = null;
                     <textarea name="excerpt" id="excerpt" rows="2" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition resize-none" placeholder="Aparece na listagem e no SEO"><?= htmlspecialchars($post['excerpt'] ?? '') ?></textarea>
                 </div>
                 <div>
+                    <label for="keywords" class="block text-sm font-medium text-slate-700 mb-2">Palavras-chave (SEO)</label>
+                    <input type="text" name="keywords" id="keywords"
+                        value="<?= htmlspecialchars($post['keywords'] ?? '') ?>"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition"
+                        placeholder="Ex: auditoria, compliance, governança (separadas por vírgula)">
+                </div>
+                <div>
                     <label for="category" class="block text-sm font-medium text-slate-700 mb-2">Categoria</label>
                     <select name="category" id="category" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition">
-                        <?php foreach ($fixedCategories as $cat): ?>
+                        <?php foreach ($categoryNames as $cat): ?>
                         <option value="<?= htmlspecialchars($cat) ?>" <?= (!$isCustomCategory && $postCategory === $cat ? 'selected' : '') ?>><?= htmlspecialchars($cat) ?></option>
                         <?php endforeach; ?>
                         <option value="__custom__" <?= $isCustomCategory ? 'selected' : '' ?>>Outra (digite abaixo)</option>

@@ -13,9 +13,32 @@ function getDb(): PDO {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
         initBlogTable($pdo);
+        initBlogCategoriesTable($pdo);
         initAuthorsTable($pdo);
     }
     return $pdo;
+}
+
+function initBlogCategoriesTable(PDO $pdo): void {
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS blog_categories (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL UNIQUE
+        )
+    ");
+    $stmt = $pdo->query("SELECT COUNT(*) FROM blog_categories");
+    if ((int) $stmt->fetchColumn() === 0) {
+        $insert = $pdo->prepare("INSERT OR IGNORE INTO blog_categories (name) VALUES (?)");
+        foreach (['geral', 'Auditoria', 'TI', 'RH', 'Compliance'] as $name) {
+            $insert->execute([$name]);
+        }
+    }
+    // Garante que categorias já usadas nos posts existam na tabela
+    $used = $pdo->query("SELECT DISTINCT category FROM blog_posts WHERE category != ''");
+    $ins = $pdo->prepare("INSERT OR IGNORE INTO blog_categories (name) VALUES (?)");
+    while ($row = $used->fetch(PDO::FETCH_ASSOC)) {
+        $ins->execute([$row['category']]);
+    }
 }
 
 function initAuthorsTable(PDO $pdo): void {
@@ -87,6 +110,11 @@ function initBlogTable(PDO $pdo): void {
     }
     try {
         $pdo->exec('ALTER TABLE blog_posts ADD COLUMN author_whatsapp_number TEXT');
+    } catch (PDOException $e) {
+        if (strpos($e->getMessage(), 'duplicate column name') === false) throw $e;
+    }
+    try {
+        $pdo->exec('ALTER TABLE blog_posts ADD COLUMN keywords TEXT');
     } catch (PDOException $e) {
         if (strpos($e->getMessage(), 'duplicate column name') === false) throw $e;
     }

@@ -20,7 +20,7 @@ if (!$post) {
 
 $pageTitle = $post['title'] . ' | Artigos 3KAP';
 $pageDescription = $post['excerpt'] ?: mb_substr(strip_tags($post['content']), 0, 160) . '...';
-$pageKeywords = $post['category'] . ', artigos 3KAP';
+$pageKeywords = !empty($post['keywords']) ? $post['keywords'] : ($post['category'] . ', artigos 3KAP');
 $extraHead = '<style>.prose p{margin-bottom:1.25em;line-height:1.75;}.prose h3{font-size:1.25rem;font-weight:700;margin-top:2em;margin-bottom:0.75em;color:#1e293b;}</style>';
 require __DIR__ . '/inc/head.php';
 require __DIR__ . '/inc/header.php';

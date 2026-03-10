@@ -15,6 +15,7 @@ if ($category === '__custom__') {
     $category = trim($_POST['category_custom'] ?? '') ?: 'geral';
 }
 $category = mb_substr($category, 0, 100);
+blogEnsureCategory($category);
 
 $imageUrl = null;
 $upload = $_FILES['image_file'] ?? null;
@@ -45,6 +46,7 @@ $data = [
     'excerpt' => trim($_POST['excerpt'] ?? ''),
     'content' => $_POST['content'] ?? '',
     'category' => $category,
+    'keywords' => trim($_POST['keywords'] ?? '') ?: null,
     'image_url' => $imageUrl,
     'video_url' => $videoUrl,
     'author_id' => isset($_POST['author_id']) && $_POST['author_id'] !== '' ? (int)$_POST['author_id'] : null,
